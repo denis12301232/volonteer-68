@@ -1,10 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./reset.scss');
+@import url('./scroll.scss');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Roboto:wght@300&display=swap');
 @import 'primeicons/primeicons.css';
-
 
 * {
    font-family: 'Roboto', sans-serif;

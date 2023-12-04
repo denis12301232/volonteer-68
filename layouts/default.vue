@@ -21,7 +21,7 @@ function openMenu(type: 'left' | 'right') {
 <template>
    <header class="flex justify-between px-1 py-5 sm:p-5">
       <div class="flex items-center">
-         <Image class="ml-2  w-14 block md:hidden md:w-24 lg:block" src="/images/logo.webp" />
+         <Image class="ml-2 block w-14 md:hidden md:w-24 lg:block" src="/images/logo.webp" />
          <ul class="ml-4 hidden md:block">
             <li class="flex items-center">
                <img class="h-6 w-6" src="~/assets/icons/phone.png" alt="hot line" />
@@ -48,7 +48,7 @@ function openMenu(type: 'left' | 'right') {
       </div>
       <div class="flex flex-col items-end">
          <div class="flex items-center">
-            <Button class="hidden sm:inline-block text-sm md:hidden">{{ t('main.buttons.help') }}</Button>
+            <Button class="hidden text-sm sm:inline-block md:hidden">{{ t('main.buttons.help') }}</Button>
             <Button class="ml-2 text-sm" @click="router.push(route({ name: 'index', hash: '#donate' })!)">
                {{ t('main.buttons.donate') }}
             </Button>
@@ -60,7 +60,7 @@ function openMenu(type: 'left' | 'right') {
                option-value="value"
                option-label="label"
             />
-            <Button class="ml-2 !p-2 inline-block lg:hidden" text @click="openMenu('right')">
+            <Button class="ml-2 inline-block !p-2 lg:hidden" text @click="openMenu('right')">
                <img class="h-6 w-6" src="~/assets/icons/menu.png" alt="menu" />
             </Button>
          </div>
