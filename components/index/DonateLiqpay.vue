@@ -21,7 +21,7 @@ const disabled = computed(() => pending || !params.amount || !params.description
          <input type="hidden" name="data" :value="data?.data" />
          <input type="hidden" name="signature" :value="data?.signature" />
          <Button :loading="pending" :disabled="disabled.value" type="submit">
-            <img class="w-5" src="~/assets/icons/liqpay.svg" alt="" />
+            <img class="w-5" src="~/assets/icons/liqpay.svg" alt="liqpay" />
             <span class="ml-2">{{ t('main.donate.money.messages.donate') }}</span>
          </Button>
       </form>
