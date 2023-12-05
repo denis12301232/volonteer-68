@@ -5,7 +5,8 @@ interface IError {
    message: string;
 }
 
-defineProps<{ error: IError }>();
+const props = defineProps<{ error: IError }>();
+useSeoMeta({ title: `${props.error.statusCode} | Волонтер 68, Харків` });
 
 function handleError() {
    clearError({ redirect: '/' });
