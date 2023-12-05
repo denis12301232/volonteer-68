@@ -67,11 +67,9 @@
          "money": {
             "title": "Send money",
             "messages": {
-               "title": "Bank Transfer",
-               "receiver": "Name of receiver: NGO HAC (Humanitarian aid center) Volonter-68",
-               "code": "Receiver code: 44808422",
-               "iban": "IBAN: UA573515330000026009025903511",
-               "name": "Bank name: JSC CB «PRIVATBANK»",
+               "title": "Help us",
+               "description": "Donate's comment",
+               "donate": "Help",
                "text": "Money will be spent for buying targeted social aid goods and support of center work (fuel, car amortization)."
             }
          },
