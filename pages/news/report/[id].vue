@@ -41,29 +41,26 @@ function onKeyDown(e: KeyboardEvent) {
 </script>
 
 <template>
-   <div class="flex justify-center">
-      <div class="w-full max-w-xl">
-         <UiLink class="flex items-center" @click="goBack">
-            <i class="pi pi-angle-left"></i>
-            <span>{{ t('news.report.messages.back') }}</span>
-         </UiLink>
-         <div v-if="pending" class="flex justify-center py-10">
-            <ProgressSpinner />
-         </div>
-         <div v-else-if="report && !pending">
-            <h1 class="mt-5 text-5xl">{{ report.title }}</h1>
-            <div>{{ d(report.createdAt) }}</div>
-            <div class="flex flex-col items-center py-5">
-               <NuxtImg
-                  v-for="(img, index) of report.images"
-                  class="w-full max-w-md cursor-pointer"
-                  :key="index"
-                  :src="img"
-                  @click="openWindow(index)"
-               />
-            </div>
+   <div class="flex flex-col items-center px-2">
+      <div class="w-full max-w-4xl">
+         <Button icon="pi pi-angle-left" :label="t('news.report.messages.back')" outlined @click="goBack" />
+      </div>
+      <div v-if="pending" class="flex justify-center py-10">
+         <ProgressSpinner />
+      </div>
+      <div v-else-if="report && !pending" class="w-full max-w-4xl py-2">
+         <h1 class="mt-5 text-center text-3xl sm:text-5xl">{{ report.title }}</h1>
+         <div class="mt-2 text-center italic">{{ d(report.createdAt) }}</div>
+         <div class="flex flex-col items-center py-5">
+            <NuxtImg
+               v-for="(img, index) of report.images"
+               class="w-full max-w-md cursor-pointer"
+               :key="index"
+               :src="img"
+               @click="openWindow(index)"
+            />
             <a
-               class="flex cursor-pointer items-center justify-between border p-5 transition-all hover:border-green-400"
+               class="flex w-full max-w-xl cursor-pointer items-center justify-between border p-5 transition-all hover:border-green-400"
                target="_blank"
                :href="report.file"
             >
@@ -74,30 +71,39 @@ function onKeyDown(e: KeyboardEvent) {
                <i class="pi pi-file-pdf"></i>
             </a>
          </div>
+         <Galleria
+            v-model:visible="open"
+            :value="report?.images"
+            :responsive-options="responsiveOptions"
+            :num-visible="9"
+            :circular="true"
+            :full-screen="true"
+            :show-itemNavigators="true"
+            :show-thumbnails="false"
+            :active-index="index"
+            :pt-options="{ mergeProps: true, mergeSections: true }"
+            :pt="{
+               root: {
+                  class: [
+                     'absolute',
+                     'top-0',
+                     'left-0',
+                     'right-0',
+                     'bottom-0',
+                     'flex',
+                     'justify-center',
+                     'items-center',
+                  ],
+               },
+               closeButton: {
+                  class: ['!absolute', 'top-0', 'right-0'],
+               },
+            }"
+         >
+            <template #item="slotProps">
+               <img style="width: 70%" :src="slotProps.item" :alt="slotProps.item" />
+            </template>
+         </Galleria>
       </div>
-      <Galleria
-         v-model:visible="open"
-         :value="report?.images"
-         :responsive-options="responsiveOptions"
-         :num-visible="9"
-         :circular="true"
-         :full-screen="true"
-         :show-itemNavigators="true"
-         :show-thumbnails="false"
-         :active-index="index"
-         :pt-options="{ mergeProps: true, mergeSections: true }"
-         :pt="{
-            root: {
-               class: ['absolute', 'top-0', 'left-0', 'right-0', 'bottom-0', 'flex', 'justify-center', 'items-center'],
-            },
-            closeButton: {
-               class: ['!absolute', 'top-0', 'right-0'],
-            },
-         }"
-      >
-         <template #item="slotProps">
-            <img style="width: 70%" :src="slotProps.item" :alt="slotProps.item" />
-         </template>
-      </Galleria>
    </div>
 </template>
