@@ -1,13 +1,13 @@
 import type { Query, LiqPay } from '~/types';
 import { createHash } from 'node:crypto';
-import { DonateSchema } from '~/validation';
+import { Schema } from '~/validation';
 import { ValidationError } from 'yup';
 
 export default defineEventHandler((event) => {
    try {
       const query = getQuery<Query.Liqpay.Donate>(event);
       const config = useRuntimeConfig();
-      DonateSchema.validateSync(query);
+      Schema.LiqPay.Donate.validateSync(query);
       const json: LiqPay.Json = {
          version: 3,
          public_key: config.public.LIQPAY_PUBLIC_KEY,

@@ -83,13 +83,9 @@ function openModal(n: keyof typeof is) {
             </template>
          </Card>
          <Dialog v-model:visible="dialog" :style="{ width: '320px' }" modal block-scroll close-on-escape>
-            <template #header>
-               <h1 class="flex text-lg font-bold">{{ t('main.donate.money.messages.title') }}</h1>
+            <template #container="{ closeCallback }">
+               <Component :is="is[name]" @close="closeCallback" />
             </template>
-            <template #closeicon>
-               <i class="pi pi-times"></i>
-            </template>
-            <Component :is="is[name]" />
          </Dialog>
       </div>
    </div>

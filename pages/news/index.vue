@@ -1,19 +1,26 @@
 <script setup lang="ts">
-const { t } = useI18n();
+const { t, d } = useI18n();
 const route = useLocaleRoute();
+const { data, pending } = useFetch(`/api/report`, { query: { limit: 10, skip: 0 } });
 definePageMeta({ layout: 'default' });
 useSeoMeta({ title: `${t('news.pageTitle')} | Волонтер 68, Харків` });
 </script>
 
 <template>
    <div class="m-auto w-2/3">
-      <div class="border-t-2 border-black"></div>
+      <Divider />
+      <div v-if="pending" class="flex justify-center">
+         <ProgressSpinner aria-label="Loading" />
+      </div>
       <NuxtLink
-         class="m-auto block w-11/12 cursor-pointer border-b-2 pb-12 pt-6"
-         :to="route({ name: 'news-report-2022' })"
+         v-for="report of data?.reports"
+         class="m-auto block w-11/12 cursor-pointer px-5 pb-12 pt-6 hover:bg-slate-50"
+         :key="report._id"
+         :to="route({ name: 'news-report-id', params: { id: report._id } })"
       >
-         <div>17 квіт. 2023 р.</div>
-         <div class="text-xl font-medium">Звіт за 2022 рік</div>
+         <div>{{ d(report.createdAt) }}</div>
+         <div class="text-xl font-medium">{{ report.title }}</div>
       </NuxtLink>
+      <Divider />
    </div>
 </template>

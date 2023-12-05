@@ -15,6 +15,7 @@
       "@nuxtjs/i18n": "^8.0.0-rc.5",
       "@paypal/paypal-js": "^7.1.1",
       "autoprefixer": "^10.4.16",
+      "mongoose": "^8.0.2",
       "nuxt": "^3.8.2",
       "nuxt-primevue": "^0.2.1",
       "postcss": "^8.4.31",

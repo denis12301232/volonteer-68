@@ -7,6 +7,7 @@ import {
    type OnApproveActions,
 } from '@paypal/paypal-js';
 
+const emit = defineEmits<{ close: [] }>();
 const { locale, t } = useI18n();
 const config = useRuntimeConfig();
 const paypalRef = ref<HTMLElement | null>(null);
@@ -71,12 +72,36 @@ function onError(e: Record<string, unknown>) {
 </script>
 
 <template>
-   <div class="flex w-full flex-col items-center">
-      <div v-if="!loading" class="flex flex-col">
-         <InputNumber v-model="donate" inputId="currency-us" mode="currency" currency="USD" locale="en-US" />
-         <InputText v-model="description" class="mt-2" :placeholder="t('main.donate.money.messages.description')" />
-      </div>
-      <ProgressSpinner v-if="loading" />
-      <div v-show="!loading && donate && description" class="mt-4 max-w-sm" ref="paypalRef"></div>
-   </div>
+   <Card>
+      <template #header>
+         <Button class="!absolute right-1 top-1 z-50" icon="pi pi-times" rounded text @click="emit('close')" />
+      </template>
+      <template #title>
+         <h1 class="mt-4 text-center">{{ t('main.donate.money.messages.title') }}</h1>
+      </template>
+      <template #content>
+         <div class="flex flex-col">
+            <InputNumber
+               v-model="donate"
+               input-class="w-full"
+               inputId="currency-us"
+               mode="currency"
+               currency="USD"
+               locale="en-US"
+            />
+            <InputText
+               v-model="description"
+               class="mt-2"
+               input-class="w-full"
+               :placeholder="t('main.donate.money.messages.description')"
+            />
+         </div>
+      </template>
+      <template #footer>
+         <div class="flex justify-center">
+            <ProgressSpinner v-if="loading" class="h-6 w-6" />
+         </div>
+         <div v-show="!loading && donate && description" class="max-w-sm" ref="paypalRef"></div>
+      </template>
+   </Card>
 </template>

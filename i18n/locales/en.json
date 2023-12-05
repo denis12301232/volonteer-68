@@ -107,6 +107,13 @@
       }
    },
    "news": {
-      "pageTitle": "News"
+      "pageTitle": "News",
+      "report": {
+         "pageTitle": "Report",
+         "messages": {
+            "back": "Back",
+            "downloadPdf": "Download PDF"
+         }
+      }
    }
 }

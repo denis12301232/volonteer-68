@@ -29,22 +29,27 @@ export default defineNuxtConfig({
       private: {
          PAYPAL_CLIENT_SECRET: process.env.PAYPAL_CLIENT_SECRET,
          LIQPAY_PRIVATE_KEY: process.env.LIQPAY_PRIVATE_KEY,
+         MONGO_DB_NAME: process.env.MONGO_DB_NAME,
+         MONGO_DB_USER: process.env.MONGO_DB_USER,
+         MONGO_DB_PASSWORD: process.env.MONGO_DB_PASSWORD,
       },
    },
    i18n: {
       vueI18n: './i18n/i18n.config.ts',
       locales: [
          {
-            code: 'en',
-            file: 'en.json',
-         },
-         {
             code: 'uk',
             file: 'uk.json',
+            name: 'UK',
+         },
+         {
+            code: 'en',
+            file: 'en.json',
+            name: 'EN',
          },
       ],
       lazy: true,
-      langDir: './i18n/locales',
+      langDir: 'i18n/locales',
       defaultLocale: 'uk',
       strategy: 'prefix',
       detectBrowserLanguage: false,

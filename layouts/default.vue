@@ -1,13 +1,9 @@
 <script setup lang="ts">
-const { locale, t } = useI18n();
+const { t } = useI18n();
 const router = useRouter();
 const route = useLocaleRoute();
 const config = useRuntimeConfig();
 const menu = reactive({ left: false, right: false });
-const options = [
-   { value: 'uk', label: 'UK' },
-   { value: 'en', label: 'EN' },
-];
 
 function openMenu(type: 'left' | 'right') {
    if (type === 'left') {
@@ -21,24 +17,26 @@ function openMenu(type: 'left' | 'right') {
 <template>
    <header class="flex justify-between px-1 py-5 sm:p-5">
       <div class="flex items-center">
-         <Image class="ml-2 block w-14 md:hidden md:w-24 lg:block" src="/images/logo.webp" />
+         <NuxtImg class="ml-2 block w-14 md:hidden md:w-24 lg:block" src="/images/logo.webp" />
          <ul class="ml-4 hidden md:block">
             <li class="flex items-center">
-               <img class="h-6 w-6" src="~/assets/icons/phone.png" alt="hot line" />
-               <span class="ml-2 font-bold">{{ t('main.contacts.messages.hotLine') }}:</span>
+               <div class="flex h-6 w-6 items-center justify-center">
+                  <i class="pi pi-phone w-6"></i>
+               </div>
+               <span class="ml-1 font-bold">{{ t('main.contacts.messages.hotLine') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_HOT_LINE}`">
                   {{ config.public.PHONE_HOT_LINE }}
                </UiLink>
             </li>
             <li class="flex items-center">
-               <img class="h-6 w-6" src="~/assets/icons/invo-taxi.png" alt="invo-taxi" />
+               <img class="h-5 w-5" src="~/assets/icons/invo-taxi.png" alt="invo-taxi" />
                <span class="ml-2 font-bold">{{ t('main.contacts.messages.invoTaxi') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_INVO_TAXI}`">
                   {{ config.public.PHONE_INVO_TAXI }}
                </UiLink>
             </li>
             <li class="flex items-center">
-               <img class="h-6 w-6" src="~/assets/icons/evacuation.png" alt="evacuation" />
+               <img class="h-5 w-5" src="~/assets/icons/evacuation.png" alt="evacuation" />
                <span class="ml-2 font-bold">{{ t('main.contacts.messages.evacuation') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_EVACUATION}`">
                   {{ config.public.PHONE_EVACUATION }}
@@ -52,17 +50,8 @@ function openMenu(type: 'left' | 'right') {
             <Button class="ml-2 text-sm" @click="router.push(route({ name: 'index', hash: '#donate' })!)">
                {{ t('main.buttons.donate') }}
             </Button>
-            <Dropdown
-               v-model="locale"
-               class="ml-2 hidden !w-24 text-sm lg:flex"
-               placeholder="Lang"
-               :options="options"
-               option-value="value"
-               option-label="label"
-            />
-            <Button class="ml-2 inline-block !p-2 lg:hidden" text @click="openMenu('right')">
-               <img class="h-6 w-6" src="~/assets/icons/menu.png" alt="menu" />
-            </Button>
+            <LangSwitcher class="ml-2 hidden !w-24 text-sm lg:flex" />
+            <Button icon="pi pi-bars" class="ml-2 inline-block !p-2 lg:hidden" text @click="openMenu('right')" />
          </div>
          <div class="mt-5 hidden lg:block">
             <UiLink class="ml-2 text-sm" :to="route({ name: 'index' })">
@@ -86,7 +75,7 @@ function openMenu(type: 'left' | 'right') {
    <footer class="flex flex-col items-center py-7">
       <UiLink :href="`mailto:${config.public.EMAIL}`">{{ config.public.EMAIL }}</UiLink>
       <a class="mt-5" :href="`https://www.instagram.com/${config.public.INSTAGRAM}`" target="_blank">
-         <img src="~/assets/icons/instagram.png" alt="instagram" />
+         <i class="pi pi-instagram"></i>
       </a>
       <div class="mt-5 italic">©{{ new Date().getFullYear() }} Волонтер-68</div>
    </footer>
@@ -96,14 +85,7 @@ function openMenu(type: 'left' | 'right') {
          <h1 class="pt-5 text-center text-xl uppercase">{{ t('main.menu.title') }}</h1>
          <Divider />
          <div class="flex flex-col items-center">
-            <Dropdown
-               v-model="locale"
-               class="!w-24"
-               placeholder="Lang"
-               :options="options"
-               option-value="value"
-               option-label="label"
-            />
+            <LangSwitcher class="!w-24" />
             <UiLink class="mt-4" :to="route({ name: 'index' })">
                {{ t('main.menu.main') }}
             </UiLink>

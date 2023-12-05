@@ -2,6 +2,13 @@ export namespace Query {
    export namespace Liqpay {
       export type Donate = Pick<LiqPay.Json, 'amount' | 'currency' | 'description' | 'language'>;
    }
+
+   export namespace Report {
+      export interface Index {
+         skip: number;
+         limit: number;
+      }
+   }
 }
 
 export namespace LiqPay {

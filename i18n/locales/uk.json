@@ -105,6 +105,13 @@
       }
    },
    "news": {
-      "pageTitle": "Новини"
+      "pageTitle": "Новини",
+      "report": {
+         "pageTitle": "Звіт",
+         "messages": {
+            "back": "Назад",
+            "downloadPdf": "Завантажити PDF"
+         }
+      }
    }
 }
