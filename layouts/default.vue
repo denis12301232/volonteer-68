@@ -20,9 +20,7 @@ function openMenu(type: 'left' | 'right') {
          <NuxtImg class="ml-2 block w-14 md:hidden md:w-24 lg:block" src="/images/logo.webp" />
          <ul class="ml-4 hidden md:block">
             <li class="flex items-center">
-               <div class="flex h-6 w-6 items-center justify-center">
-                  <i class="pi pi-phone w-6"></i>
-               </div>
+               <i class="pi pi-phone w-6"></i>
                <span class="ml-1 font-bold">{{ t('main.contacts.messages.hotLine') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_HOT_LINE}`">
                   {{ config.public.PHONE_HOT_LINE }}
@@ -40,6 +38,18 @@ function openMenu(type: 'left' | 'right') {
                <span class="ml-2 font-bold">{{ t('main.contacts.messages.evacuation') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_EVACUATION}`">
                   {{ config.public.PHONE_EVACUATION }}
+               </UiLink>
+            </li>
+            <li>
+               <i class="pi pi-file-edit w-6"></i>
+               <span class="ml-1 font-bold">{{ t('main.contacts.messages.online') + ' ' }}</span>
+               <UiLink
+                  class="italic"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScXVrOShlFBkR6i8OFxPDQiOU3SUmBxjKxGV2l1WqQfrffTwQ/viewform"
+                  target="_blank"
+                  border
+                  dashed
+                  >online
                </UiLink>
             </li>
          </ul>

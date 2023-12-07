@@ -59,7 +59,8 @@
             "invoTaxi": "Invo-taxi",
             "evacuation": "Evacuation",
             "violence": "Assistance in cases of violence",
-            "telegram": "Telegram"
+            "telegram": "Telegram",
+            "online": "Fill in the form"
          }
       },
       "donate": {
