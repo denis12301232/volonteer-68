@@ -49,11 +49,13 @@ export default defineNuxtConfig({
             code: 'uk',
             file: 'uk.json',
             name: 'UK',
+            iso: 'uk'
          },
          {
             code: 'en',
             file: 'en.json',
             name: 'EN',
+            iso: 'en'
          },
       ],
       lazy: true,
