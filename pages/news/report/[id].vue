@@ -43,7 +43,10 @@ function onKeyDown(e: KeyboardEvent) {
 <template>
    <div class="flex flex-col items-center px-2">
       <div class="w-full max-w-4xl">
-         <Button icon="pi pi-angle-left" :label="t('news.report.messages.back')" outlined @click="goBack" />
+         <Button outlined @click="goBack">
+            <Icon name="prime:angle-left" />
+            <span class="font-bold">{{ t('news.report.messages.back') }}</span>
+         </Button>
       </div>
       <div v-if="pending" class="flex justify-center py-10">
          <ProgressSpinner />
@@ -54,9 +57,12 @@ function onKeyDown(e: KeyboardEvent) {
          <div class="flex flex-col items-center py-5">
             <NuxtImg
                v-for="(img, index) of report.images"
-               class="w-full max-w-md cursor-pointer"
+               class="cursor-pointer"
                :key="index"
                :src="img"
+               alt="report"
+               sizes="100vw"
+               placeholder
                @click="openWindow(index)"
             />
             <a
@@ -101,7 +107,7 @@ function onKeyDown(e: KeyboardEvent) {
             }"
          >
             <template #item="slotProps">
-               <img style="width: 70%" :src="slotProps.item" :alt="slotProps.item" />
+               <NuxtImg sizes="100%" :src="slotProps.item" placeholder alt="report" />
             </template>
          </Galleria>
       </div>
