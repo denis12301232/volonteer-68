@@ -1,14 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./scroll.scss');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Roboto:wght@300&display=swap');
-@import 'primeicons/primeicons.css';
+@import './scroll.scss';
+@font-face {
+   font-family: 'Roboto';
+   src: url('/fonts/Roboto-Light.ttf') format('truetype');
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
+}
 
 * {
    font-family: 'Roboto', sans-serif;
    letter-spacing: 1px;
 }
+
 html,
 body {
    height: 100%;

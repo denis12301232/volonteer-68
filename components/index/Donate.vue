@@ -32,10 +32,13 @@ function openModal(n: keyof typeof is) {
             <template #content>
                <div class="mt-4 flex justify-center px-5">
                   <Button outlined @click="openModal('liqpay')">
-                     <img class="w-4" src="~/assets/icons/liqpay.svg" alt="liqpay" />
+                     <SvgLiqpay class="h-4 w-4" />
                      <span class="ml-2 font-bold">LiqPay</span>
                   </Button>
-                  <Button class="ml-2" icon="pi pi-paypal" label="PayPal" outlined @click="openModal('paypal')" />
+                  <Button class="ml-2" outlined @click="openModal('paypal')">
+                     <Icon name="prime:paypal" />
+                     <span class="ml-2 font-bold">PayPal</span>
+                  </Button>
                </div>
                <div class="mt-5 px-5 italic">
                   {{ t('main.donate.money.messages.text') }}

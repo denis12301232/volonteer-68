@@ -20,28 +20,28 @@ function openMenu(type: 'left' | 'right') {
          <NuxtImg class="block md:hidden lg:block" src="/images/logo.webp" sizes="64px sm:72px md:96px" alt="logo" />
          <ul class="ml-4 hidden md:block">
             <li class="flex items-center">
-               <i class="pi pi-phone w-6"></i>
+               <Icon name="prime:phone" />
                <span class="ml-1 font-bold">{{ t('main.contacts.messages.hotLine') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_HOT_LINE}`">
                   {{ config.public.PHONE_HOT_LINE }}
                </UiLink>
             </li>
             <li class="flex items-center">
-               <img class="h-5 w-5" src="~/assets/icons/invo-taxi.png" alt="invo-taxi" />
-               <span class="ml-2 font-bold">{{ t('main.contacts.messages.invoTaxi') }}:</span>
+               <Icon name="icon-park-solid:wheelchair" />
+               <span class="ml-1 font-bold">{{ t('main.contacts.messages.invoTaxi') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_INVO_TAXI}`">
                   {{ config.public.PHONE_INVO_TAXI }}
                </UiLink>
             </li>
             <li class="flex items-center">
-               <img class="h-5 w-5" src="~/assets/icons/evacuation.png" alt="evacuation" />
-               <span class="ml-2 font-bold">{{ t('main.contacts.messages.evacuation') }}:</span>
+               <Icon name="streamline:ambulance-solid" />
+               <span class="ml-1 font-bold">{{ t('main.contacts.messages.evacuation') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_EVACUATION}`">
                   {{ config.public.PHONE_EVACUATION }}
                </UiLink>
             </li>
             <li>
-               <i class="pi pi-file-edit w-6"></i>
+               <Icon name="prime:file-edit" />
                <span class="ml-1 font-bold">{{ t('main.contacts.messages.online') + ' ' }}</span>
                <UiLink
                   class="italic"
@@ -61,7 +61,9 @@ function openMenu(type: 'left' | 'right') {
                {{ t('main.buttons.donate') }}
             </Button>
             <LangSwitcher class="ml-2 hidden !w-24 text-sm lg:flex" />
-            <Button icon="pi pi-bars" class="ml-2 inline-block !p-2 lg:hidden" text @click="openMenu('right')" />
+            <Button class="ml-2 inline-block !p-2 lg:hidden" text severity="secondary" @click="openMenu('right')">
+               <Icon name="prime:bars" />
+            </Button>
          </div>
          <div class="mt-5 hidden lg:block">
             <UiLink class="ml-2 text-sm" :to="route({ name: 'index' })">
@@ -85,9 +87,12 @@ function openMenu(type: 'left' | 'right') {
    <footer class="flex flex-col items-center py-7">
       <UiLink :href="`mailto:${config.public.EMAIL}`">{{ config.public.EMAIL }}</UiLink>
       <a class="mt-5" :href="`https://www.instagram.com/${config.public.INSTAGRAM}`" target="_blank">
-         <i class="pi pi-instagram"></i>
+         <Icon name="prime:instagram" />
       </a>
-      <div class="mt-5 italic">©{{ new Date().getFullYear() }} Волонтер-68</div>
+      <div class="mt-5 flex items-center italic">
+         <Icon name="ph:copyright-light" />
+         <span class="ml-1">{{ new Date().getFullYear() }} Волонтер-68</span>
+      </div>
    </footer>
    <Sidebar v-model:visible="menu.left" header="Sidebar">ff</Sidebar>
    <Sidebar v-model:visible="menu.right" position="right">

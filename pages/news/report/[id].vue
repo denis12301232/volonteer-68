@@ -64,11 +64,11 @@ function onKeyDown(e: KeyboardEvent) {
                target="_blank"
                :href="report.file"
             >
-               <i class="pi pi-download text-green-400"></i>
+               <Icon class="text-green-400" name="prime:download" />
                <span class="ml-2 text-sm font-medium italic">
                   {{ t('news.report.messages.downloadPdf') }}
                </span>
-               <i class="pi pi-file-pdf"></i>
+               <Icon name="prime:file-pdf" />
             </a>
          </div>
          <Galleria

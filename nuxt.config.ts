@@ -1,20 +1,28 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
 export default defineNuxtConfig({
    app: {
       head: {
          script: [{ src: '//static.liqpay.ua/libjs/checkout.js', async: true }],
       },
    },
-   devtools: { enabled: true },
+   appConfig: {
+      nuxtIcon: {
+         size: '24px',
+         class: 'icon',
+      },
+   },
    css: ['assets/styles/index.scss'],
+   devtools: { enabled: true },
+   devServer: {
+      host: '0.0.0.0',
+      port: 3000,
+   },
    postcss: {
       plugins: {
          tailwindcss: {},
          autoprefixer: {},
       },
    },
-   modules: ['@nuxtjs/i18n', '@nuxt/image', 'nuxt-primevue'],
+   modules: ['@nuxtjs/i18n', '@nuxt/image', 'nuxt-primevue', 'nuxt-icon'],
    runtimeConfig: {
       public: {
          TELEGRAM: process.env.TELEGRAM,
@@ -64,9 +72,5 @@ export default defineNuxtConfig({
          ripple: true,
       },
       importPT: { as: 'Tailwind', from: 'primevue/passthrough/tailwind' },
-   },
-   devServer: {
-      host: '0.0.0.0',
-      port: 3000,
    },
 });
