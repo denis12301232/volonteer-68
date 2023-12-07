@@ -7,12 +7,12 @@ const route = useLocaleRoute();
 <template>
    <div>
       <div class="hidden w-full justify-around py-5 md:flex">
-         <UiButton class="text-lg" color="sky" @click="router.push(route('/#donate')!)">
+         <Button class="text-lg" color="sky" @click="router.push(route('/#donate')!)">
             {{ t('main.buttons.donate') }}
-         </UiButton>
-         <UiButton class="text-lg" color="sky" @click="router.push(route('/#contacts')!)">
+         </Button>
+         <Button class="text-lg" color="sky" @click="router.push(route('/#contacts')!)">
             {{ t('main.buttons.help') }}
-         </UiButton>
+         </Button>
       </div>
       <div v-animateonscroll="{ enterClass: 'transition-opacity ease-in duration-700 opacity-100', leaveClass: '' }" class="flex flex-col items-center" id="directions">
          <h1 class="mt-16 text-center text-5xl">{{ t('main.directions.title') }}</h1>
@@ -31,12 +31,12 @@ const route = useLocaleRoute();
          </Card>
       </div>
       <div class="hidden w-full justify-around py-5 md:flex">
-         <UiButton class="text-lg" color="sky" @click="router.push(route('/#donate')!)">
+         <Button class="text-lg" color="sky" @click="router.push(route('/#donate')!)">
             {{ t('main.buttons.donate') }}
-         </UiButton>
-         <UiButton class="text-lg" color="sky" @click="router.push(route('/#contacts')!)">
+         </Button>
+         <Button class="text-lg" color="sky" @click="router.push(route('/#contacts')!)">
             {{ t('main.buttons.help') }}
-         </UiButton>
+         </Button>
       </div>
    </div>
 </template>
