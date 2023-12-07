@@ -15,9 +15,9 @@ function openMenu(type: 'left' | 'right') {
 </script>
 
 <template>
-   <header class="flex justify-between px-1 py-5 sm:p-5">
+   <header class="flex items-center justify-between px-1 py-5 sm:p-5">
       <div class="flex items-center">
-         <NuxtImg class="ml-2 block w-14 md:hidden md:w-24 lg:block" src="/images/logo.webp" />
+         <NuxtImg class="block md:hidden lg:block" src="/images/logo.webp" sizes="64px sm:72px md:96px" alt="logo" />
          <ul class="ml-4 hidden md:block">
             <li class="flex items-center">
                <i class="pi pi-phone w-6"></i>
