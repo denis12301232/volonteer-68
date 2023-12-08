@@ -3,7 +3,7 @@ const { t, d } = useI18n();
 const route = useLocaleRoute();
 const { data, pending } = useFetch(`/api/report`, { query: { limit: 10, skip: 0 } });
 definePageMeta({ layout: 'default' });
-useSeoMeta({ title: `${t('news.pageTitle')} | Волонтер 68, Харків` });
+useSeoMeta({ title: `${t('news.pageTitle')} | Волонтер 68, Харків`, description: t('news.pageTitle') });
 </script>
 
 <template>

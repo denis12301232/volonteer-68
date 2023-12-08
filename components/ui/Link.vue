@@ -1,33 +1,22 @@
 <script setup lang="ts">
-import type { RouteLocationRaw } from 'vue-router';
+import type { NuxtLinkProps } from 'nuxt/app';
 
-interface Props extends /* @vue-ignore */ Omit<Partial<HTMLAnchorElement>, 'class'> {
+interface Props extends /* @vue-ignore */ NuxtLinkProps {
    dashed?: boolean;
    border?: boolean;
-   to?: RouteLocationRaw;
 }
-const props = withDefaults(defineProps<Props>(), { dashed: false, border: false });
-const router = useRouter();
-
-function onClick(e: Event) {
-   if (!props.to) {
-      return;
-   }
-   e.preventDefault();
-   router.push(props.to);
-}
+withDefaults(defineProps<Props>(), { dashed: false, border: false });
 </script>
 
 <template>
-   <a
+   <NuxtLink
       :class="[
          'hover:text-sky-400',
          'cursor-pointer',
          { 'border-b-2': border, 'border-dashed': dashed, 'hover:border-sky-400': dashed, 'border-gray-500': dashed },
       ]"
       :="$attrs"
-      @click="onClick"
    >
       <slot />
-   </a>
+   </NuxtLink>
 </template>

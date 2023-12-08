@@ -23,7 +23,7 @@ const responsiveOptions = ref([
       numVisible: 1,
    },
 ]);
-useSeoMeta({ title: `${t('news.report.pageTitle')} | Волонтер 68, Харків` });
+useSeoMeta({ title: `${t('news.report.pageTitle')} | Волонтер 68, Харків`, description: t('news.report.pageTitle') });
 onMounted(() => document.addEventListener('keydown', onKeyDown));
 onUnmounted(() => document.removeEventListener('keydown', onKeyDown));
 watchEffect(() => !report.value && !pending.value && router.push('/'));
