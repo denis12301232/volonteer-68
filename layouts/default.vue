@@ -6,11 +6,7 @@ const config = useRuntimeConfig();
 const menu = reactive({ left: false, right: false });
 
 function openMenu(type: 'left' | 'right') {
-   if (type === 'left') {
-      menu.left = !menu.left;
-   } else {
-      menu.right = !menu.right;
-   }
+   menu[type] = !menu[type];
 }
 </script>
 
@@ -27,14 +23,14 @@ function openMenu(type: 'left' | 'right') {
                </UiLink>
             </li>
             <li class="flex items-center">
-               <Icon name="icon-park-solid:wheelchair" />
+               <Icon name="fa6-solid:wheelchair-move" />
                <span class="ml-1 font-bold">{{ t('main.contacts.messages.invoTaxi') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_INVO_TAXI}`">
                   {{ config.public.PHONE_INVO_TAXI }}
                </UiLink>
             </li>
             <li class="flex items-center">
-               <Icon name="streamline:ambulance-solid" />
+               <Icon name="material-symbols:ambulance-sharp" />
                <span class="ml-1 font-bold">{{ t('main.contacts.messages.evacuation') }}:</span>
                <UiLink class="ml-1 text-sm italic" :href="`tel:${config.public.PHONE_EVACUATION}`">
                   {{ config.public.PHONE_EVACUATION }}
@@ -70,7 +66,13 @@ function openMenu(type: 'left' | 'right') {
             </Button>
             <LangSwitcher class="ml-2 hidden !w-24 text-sm lg:flex" />
             <ThemeToggler class="ml-2 hidden lg:inline-flex" />
-            <Button class="ml-2 inline-block !p-2 lg:hidden" text severity="secondary" @click="openMenu('right')">
+            <Button
+               class="ml-2 inline-block !p-2 lg:hidden"
+               text
+               severity="secondary"
+               aria-label="menu"
+               @click="openMenu('right')"
+            >
                <Icon name="prime:bars" />
             </Button>
          </div>
@@ -95,7 +97,12 @@ function openMenu(type: 'left' | 'right') {
    </main>
    <footer class="flex flex-col items-center py-7">
       <UiLink :href="`mailto:${config.public.EMAIL}`">{{ config.public.EMAIL }}</UiLink>
-      <a class="mt-5" :href="`https://www.instagram.com/${config.public.INSTAGRAM}`" target="_blank">
+      <a
+         class="mt-5"
+         :href="`https://www.instagram.com/${config.public.INSTAGRAM}`"
+         target="_blank"
+         aria-label="instagram"
+      >
          <Icon name="prime:instagram" />
       </a>
       <div class="mt-5 flex items-center italic">
@@ -103,7 +110,6 @@ function openMenu(type: 'left' | 'right') {
          <span class="ml-1">{{ new Date().getFullYear() }} Волонтер-68</span>
       </div>
    </footer>
-   <Sidebar v-model:visible="menu.left" header="Sidebar">ff</Sidebar>
    <Sidebar v-model:visible="menu.right" position="right">
       <template #container>
          <h1 class="pt-5 text-center text-xl uppercase">{{ t('main.menu.title') }}</h1>

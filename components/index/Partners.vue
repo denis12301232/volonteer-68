@@ -12,7 +12,7 @@ const { t } = useI18n();
          <h1 class="border-r pb-10 pt-0 text-center text-5xl md:border-white md:pb-0 md:pr-5 md:pt-20">
             {{ t('main.partners.title') }}
          </h1>
-         <div class="ml-20">
+         <div class="m-auto px-10 md:m-0">
             <ul class="list-disc">
                <li>
                   <UILink

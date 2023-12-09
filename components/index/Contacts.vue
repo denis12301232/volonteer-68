@@ -21,7 +21,7 @@ const config = useRuntimeConfig();
                   </UiLink>
                </li>
                <li class="mt-1 flex items-center">
-                  <Icon name="icon-park-solid:wheelchair" />
+                  <Icon name="fa6-solid:wheelchair-move" />
                   <span class="ml-2 font-bold">{{ t('main.contacts.messages.invoTaxi') }}:</span>
                   <UiLink class="flex items-center text-sm italic" :href="`tel:${config.public.PHONE_INVO_TAXI}`">
                      <span class="ml-2">{{ config.public.PHONE_INVO_TAXI }}</span>
@@ -29,7 +29,7 @@ const config = useRuntimeConfig();
                   <span class="ml-2">(Інна)</span>
                </li>
                <li class="mt-1 flex items-center">
-                  <Icon name="streamline:ambulance-solid" />
+                  <Icon name="material-symbols:ambulance-sharp" />
                   <span class="ml-2 font-bold">{{ t('main.contacts.messages.evacuation') }}:</span>
                   <UiLink class="flex items-center text-sm italic" :href="`tel:${config.public.PHONE_EVACUATION}`">
                      <span class="ml-2">{{ config.public.PHONE_EVACUATION }}</span>

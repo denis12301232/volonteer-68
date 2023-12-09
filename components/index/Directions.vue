@@ -38,7 +38,7 @@ const route = useLocaleRoute();
                <NuxtImg class="w-full" :src="`/images/direction-${item}.webp`" alt="direction" placeholder />
             </template>
             <template #content>
-               <div class="max-w-xl p-5" v-html="t(`main.directions.content.${index}.text`)"></div>
+               <div class="max-w-xl px-5" v-html="t(`main.directions.content.${index}.text`)"></div>
             </template>
          </Card>
       </div>

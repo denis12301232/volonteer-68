@@ -49,13 +49,13 @@ export default defineNuxtConfig({
             code: 'uk',
             file: 'uk.json',
             name: 'UK',
-            iso: 'uk'
+            iso: 'uk',
          },
          {
             code: 'en',
             file: 'en.json',
             name: 'EN',
-            iso: 'en'
+            iso: 'en',
          },
       ],
       lazy: true,
@@ -74,5 +74,25 @@ export default defineNuxtConfig({
          ripple: true,
       },
       importPT: { as: 'Tailwind', from: 'primevue/passthrough/tailwind' },
+      components: {
+         include: [
+            'Button',
+            'Card',
+            'Dialog',
+            'Divider',
+            'Dropdown',
+            'Galleria',
+            'InputNumber',
+            'InputText',
+            'ProgressSpinner',
+            'Sidebar',
+         ],
+      },
+      directives: {
+         include: ['animateonscroll'],
+      },
+      composables: {
+         include: [],
+      },
    },
 });

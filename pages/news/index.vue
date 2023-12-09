@@ -7,7 +7,7 @@ useSeoMeta({ title: `${t('news.pageTitle')} | Волонтер 68, Харків`
 </script>
 
 <template>
-   <div class="m-auto w-2/3">
+   <div class="m-auto w-full sm:w-2/3">
       <Divider />
       <div v-if="pending" class="flex justify-center">
          <ProgressSpinner aria-label="Loading" />

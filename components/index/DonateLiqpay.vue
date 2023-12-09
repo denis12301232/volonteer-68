@@ -43,7 +43,12 @@ const disabled = computed(() => pending.value || !params.amount || !params.descr
          >
             <input type="hidden" name="data" :value="data?.data" />
             <input type="hidden" name="signature" :value="data?.signature" />
-            <Button :loading="pending" :disabled="disabled" type="submit">
+            <Button
+               class="pointer-events-auto disabled:cursor-not-allowed dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+               :loading="pending"
+               :disabled="disabled"
+               type="submit"
+            >
                <SvgLiqpay class="h-6 w-6" />
                <span class="ml-2 font-bold">{{ t('main.donate.money.messages.donate') }}</span>
             </Button>
