@@ -85,7 +85,13 @@ function openModal(n: keyof typeof is) {
                </div>
             </template>
          </Card>
-         <Dialog v-model:visible="dialog" :style="{ width: '320px' }" modal block-scroll close-on-escape>
+         <Dialog
+            v-model:visible="dialog"
+            style="max-width: 560px; width: 100%; min-width: 320px"
+            modal
+            block-scroll
+            close-on-escape
+         >
             <template #container="{ closeCallback }">
                <Component :is="is[name]" @close="closeCallback" />
             </template>

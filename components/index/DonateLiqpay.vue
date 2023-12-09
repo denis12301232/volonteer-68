@@ -3,7 +3,7 @@ const emit = defineEmits<{ close: [] }>();
 const { locale, t } = useI18n();
 const params = reactive({ amount: 0, currency: 'USD', description: '', language: locale.value });
 const { data, pending } = await useFetch('/api/liqpay/donate', { params, immediate: false, watch: [params] });
-const disabled = computed(() => pending || !params.amount || !params.description);
+const disabled = computed(() => pending.value || !params.amount || !params.description);
 </script>
 
 <template>
@@ -28,8 +28,8 @@ const disabled = computed(() => pending || !params.amount || !params.description
             />
             <InputText
                v-model="params.description"
-               input-class="w-full"
                class="mt-2"
+               input-class="w-full"
                :placeholder="t('main.donate.money.messages.description')"
             />
          </div>
@@ -43,9 +43,9 @@ const disabled = computed(() => pending || !params.amount || !params.description
          >
             <input type="hidden" name="data" :value="data?.data" />
             <input type="hidden" name="signature" :value="data?.signature" />
-            <Button :loading="pending" :disabled="disabled.value" type="submit">
-               <img class="w-5" src="~/assets/icons/liqpay.svg" alt="liqpay" />
-               <span class="ml-2">{{ t('main.donate.money.messages.donate') }}</span>
+            <Button :loading="pending" :disabled="disabled" type="submit">
+               <SvgLiqpay class="h-6 w-6" />
+               <span class="ml-2 font-bold">{{ t('main.donate.money.messages.donate') }}</span>
             </Button>
          </form>
       </template>

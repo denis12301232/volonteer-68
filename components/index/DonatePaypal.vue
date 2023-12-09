@@ -103,7 +103,9 @@ function onError(e: Record<string, unknown>) {
          <div class="flex justify-center">
             <ProgressSpinner v-if="loading" class="h-6 w-6" />
          </div>
-         <div v-show="!loading && donate && description" class="max-w-sm" ref="paypalRef"></div>
+         <div v-show="!loading && donate && description" class="flex flex-col items-center">
+            <div class="w-full max-w-sm" ref="paypalRef"></div>
+         </div>
       </template>
    </Card>
 </template>
