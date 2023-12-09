@@ -7,10 +7,18 @@ const route = useLocaleRoute();
 <template>
    <div>
       <div class="hidden w-full justify-around py-5 md:flex">
-         <Button class="text-lg" color="sky" @click="router.push(route('/#donate')!)">
+         <Button
+            class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+            color="sky"
+            @click="router.push(route('/#donate')!)"
+         >
             {{ t('main.buttons.donate') }}
          </Button>
-         <Button class="text-lg" color="sky" @click="router.push(route('/#contacts')!)">
+         <Button
+            class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+            color="sky"
+            @click="router.push(route('/#contacts')!)"
+         >
             {{ t('main.buttons.help') }}
          </Button>
       </div>
@@ -27,7 +35,7 @@ const route = useLocaleRoute();
       <div class="flex columns-2 flex-wrap justify-center gap-4">
          <Card v-for="(item, index) in 4" :key="item" class="w-96 basis-full sm:basis-2/5" style="min-width: 300px">
             <template #header>
-               <NuxtImg class="w-full aspect-video" :src="`/images/direction-${item}.webp`" alt="direction" placeholder />
+               <NuxtImg class="w-full" :src="`/images/direction-${item}.webp`" alt="direction" placeholder />
             </template>
             <template #content>
                <div class="max-w-xl p-5" v-html="t(`main.directions.content.${index}.text`)"></div>
@@ -35,10 +43,18 @@ const route = useLocaleRoute();
          </Card>
       </div>
       <div class="hidden w-full justify-around py-5 md:flex">
-         <Button class="text-lg" color="sky" @click="router.push(route('/#donate')!)">
+         <Button
+            class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+            color="sky"
+            @click="router.push(route('/#donate')!)"
+         >
             {{ t('main.buttons.donate') }}
          </Button>
-         <Button class="text-lg" color="sky" @click="router.push(route('/#contacts')!)">
+         <Button
+            class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+            color="sky"
+            @click="router.push(route('/#contacts')!)"
+         >
             {{ t('main.buttons.help') }}
          </Button>
       </div>

@@ -12,7 +12,7 @@ function onLoad() {
 <template>
    <div class="relative mt-4 flex justify-center">
       <NuxtImg
-         class="aspect-auto w-full max-w-6xl"
+         class="aspect-auto w-full max-w-7xl"
          width="1280"
          height="626"
          src="/images/team.webp"

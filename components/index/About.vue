@@ -3,7 +3,7 @@ const { t } = useI18n();
 </script>
 
 <template>
-   <div class="flex flex-col items-center bg-slate-300 p-7">
+   <div class="flex flex-col items-center bg-slate-300 p-7 dark:bg-slate-600">
       <h1
          v-animateonscroll="{ enterClass: 'transition-opacity ease-in duration-500 opacity-100', leaveClass: '' }"
          class="mb-7 text-center text-5xl"

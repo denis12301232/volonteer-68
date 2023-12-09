@@ -56,11 +56,20 @@ function openMenu(type: 'left' | 'right') {
       </div>
       <div class="flex flex-col items-end">
          <div class="flex items-center">
-            <Button class="hidden text-sm sm:inline-block md:hidden">{{ t('main.buttons.help') }}</Button>
-            <Button class="ml-2 text-sm" @click="router.push(route({ name: 'index', hash: '#donate' })!)">
+            <Button
+               class="hidden dark:border-blue-600 dark:bg-blue-600 dark:text-white sm:inline-block md:hidden"
+               @click="router.push(route({ name: 'index', hash: '#contacts' })!)"
+            >
+               {{ t('main.buttons.help') }}
+            </Button>
+            <Button
+               class="ml-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+               @click="router.push(route({ name: 'index', hash: '#donate' })!)"
+            >
                {{ t('main.buttons.donate') }}
             </Button>
             <LangSwitcher class="ml-2 hidden !w-24 text-sm lg:flex" />
+            <ThemeToggler class="ml-2 hidden lg:inline-flex" />
             <Button class="ml-2 inline-block !p-2 lg:hidden" text severity="secondary" @click="openMenu('right')">
                <Icon name="prime:bars" />
             </Button>
@@ -111,6 +120,7 @@ function openMenu(type: 'left' | 'right') {
             <UiLink class="mt-4" :to="route('/news')">
                {{ t('main.menu.news') }}
             </UiLink>
+            <ThemeToggler class="mt-4" />
          </div>
       </template>
    </Sidebar>

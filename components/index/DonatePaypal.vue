@@ -74,7 +74,9 @@ function onError(e: Record<string, unknown>) {
 <template>
    <Card>
       <template #header>
-         <Button class="!absolute right-1 top-1 z-50" icon="pi pi-times" rounded text @click="emit('close')" />
+         <Button class="!absolute right-1 top-1 z-50" icon="pi pi-times" rounded text @click="emit('close')">
+            <Icon name="prime:times" />
+         </Button>
       </template>
       <template #title>
          <h1 class="mt-4 text-center">{{ t('main.donate.money.messages.title') }}</h1>

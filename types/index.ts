@@ -1,3 +1,5 @@
+export type ITheme = 'dark' | 'light';
+
 export namespace Query {
    export namespace Liqpay {
       export type Donate = Pick<LiqPay.Json, 'amount' | 'currency' | 'description' | 'language'>;

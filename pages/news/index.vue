@@ -14,7 +14,7 @@ useSeoMeta({ title: `${t('news.pageTitle')} | Волонтер 68, Харків`
       </div>
       <NuxtLink
          v-for="report of data?.reports"
-         class="m-auto block w-11/12 cursor-pointer px-5 pb-12 pt-6 hover:bg-slate-50"
+         class="m-auto block w-11/12 cursor-pointer px-5 pb-12 pt-6 transition-all hover:bg-slate-50 dark:hover:bg-slate-700"
          :key="report._id"
          :to="route({ name: 'news-report-id', params: { id: report._id } })"
       >

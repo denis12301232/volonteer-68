@@ -31,11 +31,11 @@ function openModal(n: keyof typeof is) {
             </template>
             <template #content>
                <div class="mt-4 flex justify-center px-5">
-                  <Button outlined @click="openModal('liqpay')">
+                  <Button class="dark:border-blue-600 dark:text-blue-600" outlined @click="openModal('liqpay')">
                      <SvgLiqpay class="h-4 w-4" />
                      <span class="ml-2 font-bold">LiqPay</span>
                   </Button>
-                  <Button class="ml-2" outlined @click="openModal('paypal')">
+                  <Button class="ml-2 dark:border-blue-600 dark:text-blue-600" outlined @click="openModal('paypal')">
                      <Icon name="prime:paypal" />
                      <span class="ml-2 font-bold">PayPal</span>
                   </Button>

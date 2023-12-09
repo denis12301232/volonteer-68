@@ -18,12 +18,15 @@ const { data, pending } = useFetch('/api/report', { query: { limit: 10, skip: 0 
       </h1>
       <div class="w-full max-w-5xl">
          <ProgressSpinner v-if="pending" aria-label="Loading" />
-         <Card v-else v-for="report of data?.reports" :key="report._id" class="w-64 !bg-slate-200">
+         <Card v-else v-for="report of data?.reports" :key="report._id" class="w-64 bg-slate-200">
             <template #title>{{ report.title }}</template>
             <template #subtitle>{{ d(report.createdAt) }}</template>
             <template #footer>
                <NuxtLink :to="route({ name: 'news-report-id', params: { id: report._id } })">
-                  <Button :label="t('main.news.messages.open')" />
+                  <Button
+                     class="dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+                     :label="t('main.news.messages.open')"
+                  />
                </NuxtLink>
             </template>
          </Card>

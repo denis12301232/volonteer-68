@@ -66,7 +66,7 @@ function onKeyDown(e: KeyboardEvent) {
                @click="openWindow(index)"
             />
             <a
-               class="flex w-full max-w-xl cursor-pointer items-center justify-between border p-5 transition-all hover:border-green-400"
+               class="flex mt-2 w-full max-w-xl cursor-pointer items-center justify-between border p-5 transition-all hover:border-green-400"
                target="_blank"
                :href="report.file"
             >

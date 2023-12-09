@@ -8,7 +8,7 @@ const { t } = useI18n();
       class="flex flex-col items-center"
       id="partners"
    >
-      <div class="flex w-full flex-col justify-center bg-slate-300 py-20 md:flex-row">
+      <div class="flex w-full flex-col justify-center bg-slate-300 py-20 dark:bg-slate-600 md:flex-row">
          <h1 class="border-r pb-10 pt-0 text-center text-5xl md:border-white md:pb-0 md:pr-5 md:pt-20">
             {{ t('main.partners.title') }}
          </h1>
@@ -73,7 +73,7 @@ const { t } = useI18n();
             </ul>
          </div>
       </div>
-      <div class="flex w-full flex-col items-center bg-gray-400 p-7 text-center text-2xl">
+      <div class="flex w-full flex-col items-center bg-gray-400 p-7 text-center text-2xl dark:bg-gray-700">
          <div class="max-w-4xl">
             {{ t('main.partners.messages.work') }}
          </div>
