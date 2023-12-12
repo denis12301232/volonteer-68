@@ -5,15 +5,15 @@ const theme = useTheme();
 
 <template>
    <Html
-      :lang="head.htmlAttrs?.lang"
-      :dir="head.htmlAttrs?.dir"
       :class="[
-         theme === 'dark' ? 'dark' : 'light',
+         theme,
          {
             'bg-slate-950': theme === 'dark',
             'text-white': theme === 'dark',
          },
       ]"
+      :lang="head.htmlAttrs?.lang"
+      :dir="head.htmlAttrs?.dir"
    />
    <NuxtLayout>
       <NuxtPage />

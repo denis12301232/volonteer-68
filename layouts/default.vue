@@ -39,14 +39,7 @@ function openMenu(type: 'left' | 'right') {
             <li>
                <Icon name="prime:file-edit" />
                <span class="ml-1 font-bold">{{ t('main.contacts.messages.online') + ' ' }}</span>
-               <UiLink
-                  class="italic"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLScXVrOShlFBkR6i8OFxPDQiOU3SUmBxjKxGV2l1WqQfrffTwQ/viewform"
-                  target="_blank"
-                  border
-                  dashed
-                  >online
-               </UiLink>
+               <UiLink class="italic" :to="route({ name: 'google-form' })" border dashed>online </UiLink>
             </li>
          </ul>
       </div>

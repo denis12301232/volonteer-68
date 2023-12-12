@@ -114,5 +114,8 @@
             "downloadPdf": "Завантажити PDF"
          }
       }
+   },
+   "googleForm": {
+      "pageTitle": "Google форма"
    }
 }
