@@ -36,7 +36,7 @@ const route = useLocaleRoute();
          <Card v-for="(item, index) in 4" :key="item" class="w-96 basis-full sm:basis-2/5" style="min-width: 300px">
             <template #header>
                <NuxtImg
-                  class="h-auto w-full"
+                  class="h-auto w-full select-none"
                   :src="`/images/direction-${item}.webp`"
                   alt="direction"
                   placeholder
