@@ -35,7 +35,13 @@ const route = useLocaleRoute();
       <div class="flex columns-2 flex-wrap justify-center gap-4">
          <Card v-for="(item, index) in 4" :key="item" class="w-96 basis-full sm:basis-2/5" style="min-width: 300px">
             <template #header>
-               <NuxtImg class="w-full" :src="`/images/direction-${item}.webp`" alt="direction" placeholder />
+               <NuxtImg
+                  class="h-auto w-full"
+                  :src="`/images/direction-${item}.webp`"
+                  alt="direction"
+                  placeholder
+                  loading="lazy"
+               />
             </template>
             <template #content>
                <div class="max-w-xl px-5" v-html="t(`main.directions.content.${index}.text`)"></div>
