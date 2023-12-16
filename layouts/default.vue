@@ -11,7 +11,7 @@ function openMenu(type: 'left' | 'right') {
 </script>
 
 <template>
-   <header class="flex items-center justify-between px-1 py-5 sm:p-5">
+   <header class="flex items-center justify-between p-2 sm:p-5">
       <div class="flex items-center">
          <NuxtImg class="block md:hidden lg:block" src="/images/logo.webp" sizes="64px sm:72px md:96px" alt="logo" />
          <ul class="ml-4 hidden md:block">
@@ -52,7 +52,7 @@ function openMenu(type: 'left' | 'right') {
                {{ t('main.buttons.help') }}
             </Button>
             <Button
-               class="ml-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+               class="ml-2 hidden dark:border-blue-600 dark:bg-blue-600 dark:text-white sm:inline-block"
                @click="router.push(route({ name: 'index', hash: '#donate' })!)"
             >
                {{ t('main.buttons.donate') }}
@@ -66,7 +66,7 @@ function openMenu(type: 'left' | 'right') {
                aria-label="menu"
                @click="openMenu('right')"
             >
-               <Icon name="prime:bars" />
+               <Icon name="prime:bars" size="40" />
             </Button>
          </div>
          <div class="mt-5 hidden lg:block">
