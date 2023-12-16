@@ -5,13 +5,16 @@ const config = useRuntimeConfig();
 
 <template>
    <div
-      v-animateonscroll="{ enterClass: 'transition-opacity ease-in duration-700 opacity-100', leaveClass: '' }"
+      v-animateonscroll="{
+         enterClass: 'transition-opacity duration-500 ease-in opacity-100',
+         threshold: [0.1],
+      }"
       class="flex flex-col items-center p-7"
    >
-      <h1 class="mb-7 mt-16 text-center text-6xl" id="contacts">{{ t('main.contacts.title') }}</h1>
+      <h1 class="text-center text-4xl sm:text-6xl" id="contacts">{{ t('main.contacts.title') }}</h1>
       <div class="flex w-full flex-wrap justify-between md:justify-around">
-         <div>
-            <h3 class="text-2xl">{{ t('main.contacts.messages.help') }}</h3>
+         <div class="basis-full pt-8 sm:basis-auto">
+            <h2 class="text-center text-2xl sm:text-left">{{ t('main.contacts.messages.help') }}</h2>
             <ul class="mt-10 flex flex-col">
                <li class="mt-1 flex items-center">
                   <Icon name="prime:phone" />
@@ -56,8 +59,10 @@ const config = useRuntimeConfig();
                </li>
             </ul>
          </div>
-         <div class="mt-8 sm:mt-0">
-            <h3 class="text-2xl">{{ t('main.contacts.messages.bisness') }}</h3>
+         <div class="basis-full pt-8 sm:basis-auto">
+            <h2 class="text-center text-2xl sm:text-left">
+               {{ t('main.contacts.messages.bisness') }}
+            </h2>
             <ul class="mt-10 flex flex-col">
                <li class="mt-1 flex items-center">
                   <Icon name="prime:envelope" />

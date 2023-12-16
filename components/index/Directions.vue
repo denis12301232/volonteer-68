@@ -5,7 +5,13 @@ const route = useLocaleRoute();
 </script>
 
 <template>
-   <div>
+   <div
+      v-animateonscroll="{
+         enterClass: 'transition-opacity duration-500 ease-in opacity-100',
+         threshold: [0.1],
+      }"
+      class="mt-7"
+   >
       <div class="hidden w-full justify-around py-5 md:flex">
          <Button
             class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
@@ -22,12 +28,8 @@ const route = useLocaleRoute();
             {{ t('main.buttons.help') }}
          </Button>
       </div>
-      <div
-         v-animateonscroll="{ enterClass: 'transition-opacity ease-in duration-700 opacity-100', leaveClass: '' }"
-         class="flex flex-col items-center"
-         id="directions"
-      >
-         <h1 class="mt-16 text-center text-5xl">{{ t('main.directions.title') }}</h1>
+      <div class=" flex flex-col items-center" id="directions">
+         <h1 class=" text-center text-4xl sm:text-6xl">{{ t('main.directions.title') }}</h1>
          <p class="max-w-5xl pb-14 pt-7 text-center text-lg">
             {{ t('main.directions.subtitle') }}
          </p>

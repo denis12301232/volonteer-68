@@ -4,12 +4,15 @@ const { t } = useI18n();
 
 <template>
    <div
-      v-animateonscroll="{ enterClass: 'transition-opacity ease-in duration-700 opacity-100', leaveClass: '' }"
+      v-animateonscroll="{
+         enterClass: 'transition-opacity duration-500 ease-in opacity-100',
+         threshold: [0.1],
+      }"
       class="flex flex-col items-center"
       id="partners"
    >
-      <div class="flex w-full flex-col justify-center bg-slate-300 py-20 dark:bg-slate-600 md:flex-row">
-         <h1 class="border-r pb-10 pt-0 text-center text-5xl md:border-white md:pb-0 md:pr-5 md:pt-20">
+      <div class="flex w-full flex-col justify-center bg-slate-300 py-10 sm:py-20 dark:bg-slate-600 md:flex-row">
+         <h1 class="border-r pb-10 pt-0 text-center text-4xl sm:text-6xl md:border-white md:pb-0 md:pr-5 md:pt-20">
             {{ t('main.partners.title') }}
          </h1>
          <div class="m-auto px-10 md:m-0">

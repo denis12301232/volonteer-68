@@ -61,12 +61,14 @@ function onKeyDown(e: KeyboardEvent) {
                :key="index"
                :src="img"
                alt="report"
+               width="620"
+               height="854"
                sizes="100vw"
                placeholder
                @click="openWindow(index)"
             />
             <a
-               class="flex mt-2 w-full max-w-xl cursor-pointer items-center justify-between border p-5 transition-all hover:border-green-400"
+               class="mt-2 flex w-full max-w-xl cursor-pointer items-center justify-between border p-5 transition-all hover:border-green-400"
                target="_blank"
                :href="report.file"
             >
@@ -90,19 +92,56 @@ function onKeyDown(e: KeyboardEvent) {
             :pt-options="{ mergeProps: true, mergeSections: true }"
             :pt="{
                root: {
-                  class: [
-                     'absolute',
-                     'top-0',
-                     'left-0',
-                     'right-0',
-                     'bottom-0',
-                     'flex',
-                     'justify-center',
-                     'items-center',
-                  ],
+                  class: ['absolute', 'top-0', 'left-0', 'right-0', 'bottom-0', 'bg-slate-950'],
+               },
+               content: {
+                  class: ['h-full', 'w-full'],
+               },
+               itemWrapper: {
+                  class: ['h-full', 'w-full'],
+               },
+               itemContainer: {
+                  class: ['h-full', 'w-full'],
                },
                closeButton: {
-                  class: ['!absolute', 'top-0', 'right-0'],
+                  class: [
+                     '!absolute',
+                     'top-0',
+                     'right-0',
+                     'z-10',
+                     'hover:bg-sky-950/30',
+                     'rounded-full',
+                     'text-sky-600',
+                  ],
+               },
+               nextItemButton: {
+                  class: [
+                     '!absolute',
+                     '-right-7',
+                     'hover:bg-sky-950/30',
+                     'rounded-full',
+                     'text-sky-600',
+                     'top-1/2',
+                     '-translate-x-1/2',
+                     'z-10',
+                     'block',
+                  ],
+               },
+               previousItemButton: {
+                  class: [
+                     '!absolute',
+                     'left-7',
+                     'hover:bg-sky-950/30',
+                     'rounded-full',
+                     'text-sky-600',
+                     'top-1/2',
+                     '-translate-x-1/2',
+                     'z-10',
+                     'block',
+                  ],
+               },
+               item: {
+                  class: ['h-full', 'w-full', 'flex', 'justify-center', 'items-center'],
                },
             }"
          >

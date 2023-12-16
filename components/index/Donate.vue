@@ -14,15 +14,16 @@ function openModal(n: keyof typeof is) {
 </script>
 
 <template>
-   <div>
-      <h1
-         v-animateonscroll="{ enterClass: 'transition-opacity ease-in duration-700 opacity-100', leaveClass: '' }"
-         class="my-14 text-center text-6xl"
-         id="donate"
-      >
+   <div
+      v-animateonscroll="{
+         enterClass: 'transition-opacity duration-500 ease-in opacity-100',
+         threshold: [0.1],
+      }"
+   >
+      <h1 class="mt-14 text-center text-4xl sm:text-6xl" id="donate">
          {{ t('main.donate.title') }}
       </h1>
-      <div class="relative">
+      <div class="relative mt-7">
          <NuxtImg
             class="absolute -z-10 h-full w-full select-none object-center"
             src="/images/background-donate.webp"
