@@ -89,7 +89,8 @@ function onKeyDown(e: KeyboardEvent) {
             :show-itemNavigators="true"
             :show-thumbnails="false"
             :active-index="index"
-            :pt-options="{ mergeProps: true, mergeSections: true }"
+            :pt-options="{ mergeProps: false, mergeSections: true }"
+            unstyled
             :pt="{
                root: {
                   class: ['absolute', 'top-0', 'left-0', 'right-0', 'bottom-0', 'bg-slate-950'],
@@ -107,6 +108,7 @@ function onKeyDown(e: KeyboardEvent) {
                   class: [
                      '!absolute',
                      'top-0',
+                     'p-5',
                      'right-0',
                      'z-10',
                      'hover:bg-sky-950/30',
@@ -118,6 +120,7 @@ function onKeyDown(e: KeyboardEvent) {
                   class: [
                      '!absolute',
                      '-right-7',
+                     'p-5',
                      'hover:bg-sky-950/30',
                      'rounded-full',
                      'text-sky-600',
@@ -131,6 +134,7 @@ function onKeyDown(e: KeyboardEvent) {
                   class: [
                      '!absolute',
                      'left-7',
+                     'p-5',
                      'hover:bg-sky-950/30',
                      'rounded-full',
                      'text-sky-600',
@@ -146,7 +150,7 @@ function onKeyDown(e: KeyboardEvent) {
             }"
          >
             <template #item="slotProps">
-               <NuxtImg sizes="100%" :src="slotProps.item" placeholder alt="report" />
+               <NuxtImg class="select-none" sizes="100%" :src="slotProps.item" placeholder alt="report" />
             </template>
          </Galleria>
       </div>

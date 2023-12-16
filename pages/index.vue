@@ -15,7 +15,7 @@ useSeoMeta({ title: `${t('main.pageTitle')} | Волонтер 68, Харків`
          {{ t('main.buttons.help') }}
       </Button>
       <Button
-         class="ml-2 mt-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+         class="mt-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white"
          @click="router.push(route({ name: 'index', hash: '#donate' })!)"
       >
          {{ t('main.buttons.donate') }}
