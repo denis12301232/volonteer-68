@@ -39,7 +39,7 @@ function openMenu(type: 'left' | 'right') {
             <li>
                <Icon name="prime:file-edit" />
                <span class="ml-1 font-bold">{{ t('main.contacts.messages.online') + ' ' }}</span>
-               <UiLink class="italic" :to="route({ name: 'google-form' })" border dashed>online </UiLink>
+               <UiLink class="italic" :to="route({ name: 'google-form' })" border dashed>online</UiLink>
             </li>
          </ul>
       </div>
@@ -109,14 +109,22 @@ function openMenu(type: 'left' | 'right') {
          <Divider />
          <div class="flex flex-col items-center">
             <LangSwitcher class="!w-24" />
-            <UiLink class="mt-4" :to="route({ name: 'index' })">
+            <UiLink class="mt-4" :to="route({ name: 'index' })" @click="openMenu('right')">
                {{ t('main.menu.main') }}
             </UiLink>
-            <UiLink class="mt-4" :to="route('/#about')">{{ t('main.menu.about') }}</UiLink>
-            <UiLink class="mt-4" :to="route('/#directions')">{{ t('main.menu.directions') }}</UiLink>
-            <UiLink class="mt-4" :to="route('/#donate')">{{ t('main.menu.donate') }}</UiLink>
-            <UiLink class="mt-4" :to="route('/#partners')">{{ t('main.menu.partners') }}</UiLink>
-            <UiLink class="mt-4" :to="route('/news')">
+            <UiLink class="mt-4" :to="route('/#about')" @click="openMenu('right')">
+               {{ t('main.menu.about') }}
+            </UiLink>
+            <UiLink class="mt-4" :to="route('/#directions')" @click="openMenu('right')">
+               {{ t('main.menu.directions') }}
+            </UiLink>
+            <UiLink class="mt-4" :to="route('/#donate')" @click="openMenu('right')">
+               {{ t('main.menu.donate') }}
+            </UiLink>
+            <UiLink class="mt-4" :to="route('/#partners')" @click="openMenu('right')">
+               {{ t('main.menu.partners') }}
+            </UiLink>
+            <UiLink class="mt-4" :to="route('/news')" @click="openMenu('right')">
                {{ t('main.menu.news') }}
             </UiLink>
             <ThemeToggler class="mt-4" />
