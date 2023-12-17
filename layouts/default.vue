@@ -3,11 +3,23 @@ const { t } = useI18n();
 const router = useRouter();
 const route = useLocaleRoute();
 const config = useRuntimeConfig();
+const isLargeScreen = useMediaQuery('(min-width: 480px)');
 const menu = reactive({ left: false, right: false });
+const rightMenuRef = ref<HTMLDivElement | null>(null);
+const { isSwiping, direction } = useSwipe(rightMenuRef);
+const test = ref();
 
 function openMenu(type: 'left' | 'right') {
    menu[type] = !menu[type];
 }
+
+watch(test, () => test.value, { immediate: true });
+
+watch([isSwiping, direction, isLargeScreen], () => {
+   if (isSwiping.value && direction.value === 'right' && isLargeScreen.value) {
+      openMenu('right');
+   }
+});
 </script>
 
 <template>
@@ -103,31 +115,61 @@ function openMenu(type: 'left' | 'right') {
          <span class="ml-1">{{ new Date().getFullYear() }} Волонтер-68</span>
       </div>
    </footer>
-   <Sidebar v-model:visible="menu.right" position="right">
-      <template #container>
-         <h1 class="pt-5 text-center text-xl uppercase">{{ t('main.menu.title') }}</h1>
-         <Divider />
-         <div class="flex flex-col items-center">
-            <LangSwitcher class="!w-24" />
-            <UiLink class="mt-4" :to="route({ name: 'index' })" @click="openMenu('right')">
-               {{ t('main.menu.main') }}
-            </UiLink>
-            <UiLink class="mt-4" :to="route('/#about')" @click="openMenu('right')">
-               {{ t('main.menu.about') }}
-            </UiLink>
-            <UiLink class="mt-4" :to="route('/#directions')" @click="openMenu('right')">
-               {{ t('main.menu.directions') }}
-            </UiLink>
-            <UiLink class="mt-4" :to="route('/#donate')" @click="openMenu('right')">
-               {{ t('main.menu.donate') }}
-            </UiLink>
-            <UiLink class="mt-4" :to="route('/#partners')" @click="openMenu('right')">
-               {{ t('main.menu.partners') }}
-            </UiLink>
-            <UiLink class="mt-4" :to="route('/news')" @click="openMenu('right')">
-               {{ t('main.menu.news') }}
-            </UiLink>
-            <ThemeToggler class="mt-4" />
+   <Sidebar v-model:visible="menu.right" :position="isLargeScreen ? 'right' : 'full'" block-scroll>
+      <template #container="{ closeCallback }">
+         <div class="h-full w-full" ref="rightMenuRef">
+            <div class="relative">
+               <h1 class="pt-5 text-center text-xl uppercase">{{ t('main.menu.title') }}</h1>
+               <Button v-if="!isLargeScreen" class="!absolute right-1 top-1" text rounded @click="closeCallback">
+                  <Icon name="prime:times" />
+               </Button>
+            </div>
+            <Divider />
+            <ScrollPanel
+               class="w-full"
+               style="height: calc(100% - 100px)"
+               :pt-options="{ mergeProps: true, mergeSections: true }"
+               :pt="{
+                  root: {
+                     class: ['group'],
+                  },
+                  barY: {
+                     class: [
+                        'bg-sky-500',
+                        'opacity-0',
+                        'group-hover:opacity-100',
+                        'transition-opacity',
+                        'ease-in',
+                        'duration-300',
+                        '!cursor-grab',
+                     ],
+                  },
+                  content: {
+                     class: ['flex', 'flex-col', 'items-center'],
+                  },
+               }"
+            >
+               <LangSwitcher class="!w-24" />
+               <UiLink class="mt-4" :to="route({ name: 'index' })" @click="openMenu('right')">
+                  {{ t('main.menu.main') }}
+               </UiLink>
+               <UiLink class="mt-4" :to="route('/#about')" @click="openMenu('right')">
+                  {{ t('main.menu.about') }}
+               </UiLink>
+               <UiLink class="mt-4" :to="route('/#directions')" @click="openMenu('right')">
+                  {{ t('main.menu.directions') }}
+               </UiLink>
+               <UiLink class="mt-4" :to="route('/#donate')" @click="openMenu('right')">
+                  {{ t('main.menu.donate') }}
+               </UiLink>
+               <UiLink class="mt-4" :to="route('/#partners')" @click="openMenu('right')">
+                  {{ t('main.menu.partners') }}
+               </UiLink>
+               <UiLink class="mt-4" :to="route('/news')" @click="openMenu('right')">
+                  {{ t('main.menu.news') }}
+               </UiLink>
+               <ThemeToggler class="my-4" />
+            </ScrollPanel>
          </div>
       </template>
    </Sidebar>

@@ -22,7 +22,7 @@ export default defineNuxtConfig({
          autoprefixer: {},
       },
    },
-   modules: ['@nuxtjs/i18n', '@nuxt/image', 'nuxt-primevue', 'nuxt-icon'],
+   modules: ['@nuxtjs/i18n', '@nuxt/image', '@vueuse/nuxt', 'nuxt-primevue', 'nuxt-icon'],
    runtimeConfig: {
       public: {
          TELEGRAM: process.env.TELEGRAM,
@@ -68,7 +68,6 @@ export default defineNuxtConfig({
       },
    },
    primevue: {
-      usePrimeVue: true,
       options: {
          unstyled: true,
          ripple: true,
@@ -86,6 +85,7 @@ export default defineNuxtConfig({
             'InputText',
             'ProgressSpinner',
             'Sidebar',
+            'ScrollPanel'
          ],
       },
       directives: {
@@ -94,5 +94,5 @@ export default defineNuxtConfig({
       composables: {
          include: [],
       },
-   },
+   }
 });
