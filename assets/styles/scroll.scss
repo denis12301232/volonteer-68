@@ -1,27 +1,39 @@
-html {
-   cursor: grab;
-}
-
-body {
-   cursor: default;
-}
-
 ::-webkit-scrollbar {
-   width: 10px;
+   width: 5px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-   background: #f1f1f1;
+html.dark {
+   /* Track */
+   ::-webkit-scrollbar-track {
+      background: #020617a2;
+   }
+
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+      background: #3a3b3d;
+      border-radius: 5px;
+   }
+
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+   }
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-   background: #888;
-   border-radius: 5px;
-}
+html.light {
+   /* Track */
+   ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+   }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-   background: #555;
+   /* Handle */
+   ::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 5px;
+   }
+
+   /* Handle on hover */
+   ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+   }
 }
