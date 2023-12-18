@@ -22,7 +22,14 @@ export default defineNuxtConfig({
          autoprefixer: {},
       },
    },
-   modules: ['@nuxtjs/i18n', '@nuxt/image', '@vueuse/nuxt', 'nuxt-primevue', 'nuxt-icon'],
+   modules: [
+     '@nuxtjs/i18n',
+     '@nuxt/image',
+     '@vueuse/nuxt',
+     'nuxt-primevue',
+     'nuxt-icon',
+     '@nuxtjs/robots'
+   ],
    runtimeConfig: {
       public: {
          TELEGRAM: process.env.TELEGRAM,

@@ -5,7 +5,7 @@ const route = useRoute();
 const localeRoute = useLocaleRoute();
 definePageMeta({ layout: 'default' });
 useSeoMeta({ title: `${t('main.pageTitle')} | Волонтер 68, Харків`, description: t('main.pageTitle') });
-onMounted(() => scrollToEl('#__nuxt', route.hash));
+onMounted(() => route.hash && scrollToEl('#__nuxt', route.hash));
 </script>
 
 <template>
