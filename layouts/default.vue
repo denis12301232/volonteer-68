@@ -7,19 +7,20 @@ const isLargeScreen = useMediaQuery('(min-width: 480px)');
 const menu = reactive({ left: false, right: false });
 const rightMenuRef = ref<HTMLDivElement | null>(null);
 const { isSwiping, direction } = useSwipe(rightMenuRef);
-const test = ref();
-
-function openMenu(type: 'left' | 'right') {
-   menu[type] = !menu[type];
-}
-
-watch(test, () => test.value, { immediate: true });
 
 watch([isSwiping, direction, isLargeScreen], () => {
    if (isSwiping.value && direction.value === 'right' && isLargeScreen.value) {
       openMenu('right');
    }
 });
+
+function openMenu(type: 'left' | 'right') {
+   menu[type] = !menu[type];
+}
+
+function goToAnchor(anchor: string) {
+   router.push({ name: 'index', hash: anchor }).then(() => setTimeout(() => scrollToEl('#__nuxt', anchor)));
+}
 </script>
 
 <template>
@@ -85,13 +86,19 @@ watch([isSwiping, direction, isLargeScreen], () => {
             <UiLink class="ml-2 text-sm" :to="route({ name: 'index' })">
                {{ t('main.menu.main') }}
             </UiLink>
-            <UiLink class="ml-2 text-sm" :to="route({ name: 'index', hash: '#about' })">
+            <UiLink class="ml-2 text-sm" href="/#about" @click="goToAnchor('#directions')">
                {{ t('main.menu.about') }}
             </UiLink>
-            <UiLink class="ml-2 text-sm" :to="route('/#directions')">{{ t('main.menu.directions') }}</UiLink>
-            <UiLink class="ml-2 text-sm" :to="route('/#donate')">{{ t('main.menu.donate') }}</UiLink>
-            <UiLink class="ml-2 text-sm" :to="route('/#partners')">{{ t('main.menu.partners') }}</UiLink>
-            <UiLink class="ml-2 text-sm" :to="route('/news')">
+            <UiLink class="ml-2 text-sm" href="/#directions" @click="goToAnchor('#directions')">
+               {{ t('main.menu.directions') }}
+            </UiLink>
+            <UiLink class="ml-2 text-sm" href="/#donate" @click="goToAnchor('#donate')">
+               {{ t('main.menu.donate') }}
+            </UiLink>
+            <UiLink class="ml-2 text-sm" href="/#partners" @click="goToAnchor('#partners')">
+               {{ t('main.menu.partners') }}
+            </UiLink>
+            <UiLink class="ml-2 text-sm" :to="route({ name: 'news' })">
                {{ t('main.menu.news') }}
             </UiLink>
          </div>
@@ -115,7 +122,7 @@ watch([isSwiping, direction, isLargeScreen], () => {
          <span class="ml-1">{{ new Date().getFullYear() }} Волонтер-68</span>
       </div>
    </footer>
-   <Sidebar v-model:visible="menu.right" :position="isLargeScreen ? 'right' : 'full'" block-scroll>
+   <Sidebar v-model:visible="menu.right" :position="isLargeScreen ? 'right' : 'full'">
       <template #container="{ closeCallback }">
          <div class="h-full w-full" ref="rightMenuRef">
             <div class="relative">
@@ -153,16 +160,16 @@ watch([isSwiping, direction, isLargeScreen], () => {
                <UiLink class="mt-4" :to="route({ name: 'index' })" @click="openMenu('right')">
                   {{ t('main.menu.main') }}
                </UiLink>
-               <UiLink class="mt-4" :to="route('/#about')" @click="openMenu('right')">
+               <UiLink class="mt-4" href="/#about" @click="[openMenu('right'), goToAnchor('#about')]">
                   {{ t('main.menu.about') }}
                </UiLink>
-               <UiLink class="mt-4" :to="route('/#directions')" @click="openMenu('right')">
+               <UiLink class="mt-4" href="/#directions" @click="[openMenu('right'), goToAnchor('#directions')]">
                   {{ t('main.menu.directions') }}
                </UiLink>
-               <UiLink class="mt-4" :to="route('/#donate')" @click="openMenu('right')">
+               <UiLink class="mt-4" href="/#donate" @click="[openMenu('right'), goToAnchor('#donate')]">
                   {{ t('main.menu.donate') }}
                </UiLink>
-               <UiLink class="mt-4" :to="route('/#partners')" @click="openMenu('right')">
+               <UiLink class="mt-4" href="/#partners" @click="[openMenu('right'), goToAnchor('#partners')]">
                   {{ t('main.menu.partners') }}
                </UiLink>
                <UiLink class="mt-4" :to="route('/news')" @click="openMenu('right')">

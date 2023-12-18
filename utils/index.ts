@@ -1,10 +1,8 @@
-export function scrollToEl(name: string, to: string) {
-   const mainEl = document.querySelector(name);
-   const toEl = document.querySelector(to);
-   const rectMain = mainEl?.getBoundingClientRect();
-   const rectTo = toEl?.getBoundingClientRect();
+export function scrollToEl(scrollSelector: string, toSelector: string) {
+   const scrollElement = document.querySelector(scrollSelector);
+   const rectScroll = scrollElement?.getBoundingClientRect();
+   const rectTo = document.querySelector(toSelector)?.getBoundingClientRect();
+   const exists = scrollElement && rectTo && rectScroll;
 
-   if (rectMain && rectTo) {
-      mainEl?.scrollTo({ behavior: 'smooth', top: rectTo.top - rectMain.top });
-   }
+   exists && scrollElement.scrollTo({ behavior: 'smooth', top: rectTo.top - rectScroll.top });
 }

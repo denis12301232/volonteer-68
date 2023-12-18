@@ -1,22 +1,24 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const router = useRouter();
-const route = useLocaleRoute();
+const route = useRoute();
+const localeRoute = useLocaleRoute();
 definePageMeta({ layout: 'default' });
 useSeoMeta({ title: `${t('main.pageTitle')} | Волонтер 68, Харків`, description: t('main.pageTitle') });
+onMounted(() => scrollToEl('#__nuxt', route.hash));
 </script>
 
 <template>
    <div class="mt-2 flex flex-col items-center sm:hidden">
       <Button
          class="dark:border-blue-600 dark:bg-blue-600 dark:text-white"
-         @click="router.push(route({ name: 'index', hash: '#contacts' })!)"
+         @click="router.push(localeRoute({ name: 'index', hash: '#contacts' })!)"
       >
          {{ t('main.buttons.help') }}
       </Button>
       <Button
          class="mt-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white"
-         @click="router.push(route({ name: 'index', hash: '#donate' })!)"
+         @click="router.push(localeRoute({ name: 'index', hash: '#donate' })!)"
       >
          {{ t('main.buttons.donate') }}
       </Button>
