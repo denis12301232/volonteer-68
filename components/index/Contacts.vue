@@ -41,7 +41,12 @@ const config = useRuntimeConfig();
                </li>
                <li class="mt-1 flex items-center">
                   <Icon name="prime:phone" />
-                  <span class="ml-2 font-bold">{{ t('main.contacts.messages.violence') }}:</span>
+                  <span
+                     v-tooltip.top="{ value: t('main.contacts.messages.violence'), showDelay: 1000, hideDelay: 300 }"
+                     class="ml-2 basis-1/2 overflow-hidden text-ellipsis whitespace-nowrap font-bold"
+                  >
+                     {{ t('main.contacts.messages.violence') }}:
+                  </span>
                   <UiLink class="flex items-center text-sm italic">
                      <span class="ml-2">1547, 116123</span>
                   </UiLink>

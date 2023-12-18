@@ -89,7 +89,7 @@ export default defineNuxtConfig({
          ],
       },
       directives: {
-         include: ['animateonscroll'],
+         include: ['animateonscroll', 'tooltip'],
       },
       composables: {
          include: [],
