@@ -37,7 +37,7 @@ export default defineNuxtConfig({
       MONGO_DB_PASSWORD: process.env.MONGO_DB_PASSWORD,
     },
   },
-  modules: ['@nuxt/image', '@nuxtjs/i18n', '@vueuse/nuxt', 'nuxt-primevue', 'nuxt-icon'],
+  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@vueuse/nuxt', 'nuxt-primevue', 'nuxt-icon'],
   i18n: {
     vueI18n: './i18n/i18n.config.ts',
     locales: [
@@ -90,5 +90,8 @@ export default defineNuxtConfig({
     composables: {
       include: [],
     },
+  },
+  tailwindcss: {
+    cssPath: 'assets/styles/tailwind.css',
   },
 });
