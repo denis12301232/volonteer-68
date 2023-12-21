@@ -1,0 +1,121 @@
+{
+  "main": {
+    "pageTitle": "Main Page",
+    "messages": {
+      "title": "Volunteer-68",
+      "slogan": "We’ll make it together"
+    },
+    "menu": {
+      "title": "Navigation",
+      "main": "Main page",
+      "about": "About us",
+      "directions": "Areas of work",
+      "contacts": "Contacts",
+      "donate": "Support us",
+      "partners": "Partners",
+      "news": "News"
+    },
+    "buttons": {
+      "donate": "I want to help!",
+      "help": "I need help!"
+    },
+    "news": {
+      "title": "News",
+      "messages": {
+        "date": "17.04.23",
+        "title": "Звіт за 2022 рік",
+        "other": "Other news",
+        "open": "Show"
+      }
+    },
+    "about": {
+      "title": "About",
+      "text": "<p>Humanitarian aid center «Volonter-68» started working in Kharkiv since full scale invasion began. Every single day within this horrific year we help those who need it, we help people who have hard times. And we are not going to stop helping! This is why we really need your help.</p><p class='mt-7'>Our care receivers are elderly people, people with disabilities, large families, bedridden patients, lonely old men and women and other people who need urgent evacuation out of shelling.</p><p class='my-7'>We help these people with:</p><ol class='!ml-7 !mt-7 !list-decimal'><li><span class='font-bold'>Evacuation.</span> Over 1000 people including limited mobility and bedridden people have already been evacuated to safe places. We have two special purpose vehicles for transportation and a great and caring team.</li><li><span class='font-bold'>Targeted social aid. </span>Food sets, diapers, medicine, pet food - we provided over 80 thousands of food sets and aid kits. We also provide health care workers who can cope with different tasks from bandaging to assistance with payment processing.</li></ol><p class='mt-5'>We cooperate with volunteers initiative groups and charity funds from Ukraine and worldwide. Everyone in Ukraine has to know that none is abandoned. We are here to help you.</p>"
+    },
+    "directions": {
+      "title": "Areas of help",
+      "subtitle": "We help people who are in critical situations. We help those who need it. We help people desperately looking for assistance and support.",
+      "content": [
+        {
+          "text": "<h1 class='mt-2 text-center text-xl uppercase'>EVACUATION</h1><h1 class='mt-5'>We’ll be there for you on your way to a safe place:</h1><ul class='mt-7 list-disc px-5'><li>we evacuate anyone, including limited mobility people and people with disabilities;</li><li>find long-term accommodation in safe places in Ukraine or abroad;</li><li>find route;</li><li>buy tickets;</li><li>guide people to buses and trains;</li><li>cooperate in a close contact with all participants of evacuation chain;</li><li>take care of safety and comfort.</li></ul>"
+        },
+        {
+          "text": "<h1 class='mt-2 text-center text-xl uppercase'>TARGETED SOCIAL AID</h1><h1 class='mt-5'>We help people who have hard times: elderly people, people with disabilities, large families, vulnerable social groups.</h1><h1>​We deliver:</h1><ul class='mt-7 list-disc px-5'><li>food sets;</li><li>household chemical goods;</li><li>diapers for kids and adults;</li><li>baby food;</li><li>personal care goods;</li><li>pet food.</li></ul>"
+        },
+        {
+          "text": "<h1 class='mt-2 text-center text-xl uppercase'>PATRONAGE</h1><h1 class='mt-5'>For those who misses health care being on territories with evacuated medical and social establishments we:</h1><ul class='mt-7 list-disc px-5'><li>help to get to nearest medical centers for check-up and specialist’s consultation;</li><li>provide with mobility means: crutches, walkers for adults, wheelchairs;</li><li>assistance in getting pension payments and social payments;</li><li><li/>provide nursing services: bandaging etc.</ul>"
+        },
+        {
+          "text": "<h1 class='mt-2 text-center text-xl uppercase'>HELP FOR ARMED FORCES OF UKRAINE</h1><h1 class='mt-5'>We help army as well:</h1><ul class='mt-7 list-disc px-5'><li>coordinate delivery of goods from donators and businessmen to units of armed forces of Ukraine;</li><li>provide defenders of Ukraine with food, medicine and personal care goods, aid kits, camouflage nets, generators.</li></ul>"
+        }
+      ]
+    },
+    "contacts": {
+      "title": "Contacts",
+      "messages": {
+        "help": "If you need help",
+        "bisness": "Partnership",
+        "hotLine": "Hot Line",
+        "invoTaxi": "Invo-taxi",
+        "evacuation": "Evacuation",
+        "violence": "Assistance in cases of violence",
+        "telegram": "Telegram",
+        "online": "Fill in the form"
+      }
+    },
+    "donate": {
+      "title": "How you can help us",
+      "money": {
+        "title": "Send money",
+        "messages": {
+          "title": "Help us",
+          "description": "Donate's comment",
+          "donate": "Help",
+          "text": "Money will be spent for buying targeted social aid goods and support of center work (fuel, car amortization)."
+        }
+      },
+      "goods": {
+        "title": "Send goods for help",
+        "messages": {
+          "title": "We’ll be pleased to forward from you to people:",
+          "food": "food;",
+          "medicine": "medicine, household chemical goods, personal care goods;",
+          "bed": "bed linen;",
+          "mobility": "mobility means for limited mobility people;",
+          "alternative": "alternative energy means: generators, accumulators, flashlights, batteries."
+        }
+      },
+      "volunteer": {
+        "title": "You can join volunteer team",
+        "messages": {
+          "title": "We’ll be grateful if you can:",
+          "transport": "transport evacuated people in city and region with your own car;",
+          "accompany": "accompany colleagues during above mentioned trips: help with limited ability people, communicate, load goods;",
+          "work": "work for call-center;",
+          "help": "help with administration of the office.",
+          "text": "It’s up to you how much time you are ready to spend volunteering! We’ll sincerely appreciate any help of yours. "
+        }
+      }
+    },
+    "partners": {
+      "title": "Partners",
+      "messages": {
+        "work": "Our work would not be possible without the support of donations from many people and organizations in Ukraine and abroad.",
+        "thanks": "Thank you!"
+      }
+    }
+  },
+  "news": {
+    "pageTitle": "News",
+    "report": {
+      "pageTitle": "Report",
+      "messages": {
+        "back": "Back",
+        "downloadPdf": "Download PDF"
+      }
+    }
+  },
+  "googleForm": {
+    "pageTitle": "Google form"
+  }
+}
