@@ -10,7 +10,7 @@ const { isSwiping, direction } = useSwipe(rightMenuRef);
 const isNeedClose = computed(
   () => isSwiping.value && direction.value === 'right' && isLargeScreen.value
 );
-const items = ref([
+const items = computed(() =>[
   {
     label: t('layout.default.nav.help'),
     icon: 'prime:envelope',

@@ -21,19 +21,19 @@
           "online": "Fill in the form"
         },
         "projects": [
-          "Проект «Евакуація людей з інклюзією»",
-          "Проект «Надання адресної гуманітарної допомоги інвалідам, літнім людям та людям з фізичними обмеженнями",
-          "Проект «Піклувальниця»",
-          "Проект «Безпека для дітей»",
-          "Проект «Гідність та безпека»",
-          "Реабілітаційний центр для людей з інвалідністю «Мрія в дії»",
-          "Проект «Інватаксі»",
-          "Проект «60+ Активна»",
-          "Проект «Профілакторій»",
-          "Проект «Кол-центр»",
-          "Тренінговий центр ( коворкінг) для осіб з інвалідністю",
-          "Шелтер постійного перебування для осіб з інвалідністю",
-          "Кейс-менеджмент з вирішення різноманітних соціальних питань осіб з інвалідністю"
+          "Project «Evacuation of people with inclusion»",
+          "Project «Providing targeted humanitarian assistance to the disabled, the elderly and people with physical limitations»",
+          "Project «Caregiver»",
+          "Safety for Children Project",
+          "Dignity and Safety Project",
+          "Dream in Action Rehabilitation Center for People with Disabilities",
+          "Project «Invataxi»",
+          "Project «60+ Active»",
+          "Project «Prophylactory»",
+          "Call Center Project",
+          "Training center (coworking) for persons with disabilities",
+          "Shelter of permanent residence for persons with disabilities",
+          "Case management for solving various social issues of persons with disabilities"
         ],
         "rightSidebar": {
           "title": "Navigation"
@@ -150,5 +150,22 @@
   },
   "googleForm": {
     "pageTitle": "Google form"
+  },
+  "projectId": {
+    "content": [
+      "The project «Evacuation of people with inclusion» is a project for the evacuation of civilians with physical limitations from under fire by ambulances.",
+      "The project «Providing targeted humanitarian aid to the disabled, the elderly and people with physical limitations».",
+      "«Pikluvalnytsia» project of medical and social patronage of people with inclusion who need external care and assistance and who live in places of compact accommodation of refugees in hostels.",
+      "Project «Safety for Children» Training for children and teenagers on the skills of first aid and mine and explosive safety",
+      "The Dignity and Safety Project is a temporary shelter for people with physical limitations with 35 beds, where they are cared for 24\\7.",
+      "«Rehabilitation center for people with disabilities called «Dream in action» with provision of permanent stay and rehabilitation and medical care» for 70 beds.",
+      "Project «Invataxi» social transportation of people with disabilities in wheelchairs (to the bank, to state institutions, etc.)",
+      "The «60+ Active» project is a project to create a network of centers in the communities of Kharkiv and the region of active women from the number of women aged 60+ for mutual assistance and combating sexual harassment.",
+      "Project «Prophylactic» on the organization of medical support and accommodation of persons with disabilities in the sanatorium «Roshcha»",
+      "Call-center project for coordination and countermeasures against HCV for persons with disabilities",
+      "Training center (coworking) for persons with disabilities",
+      "Shelter of permanent residence for persons with disabilities",
+      "Case management for solving various social issues of persons with disabilities (recovery of documents, accommodation in dormitories, treatment, etc.)"
+    ]
   }
 }
