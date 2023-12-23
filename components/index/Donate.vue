@@ -21,7 +21,7 @@ function openModal(n: keyof typeof is) {
     }"
   >
     <h1 class="mt-14 text-center text-4xl sm:text-6xl" id="donate">
-      {{ t('main.donate.title') }}
+      {{ t('index.donate.title') }}
     </h1>
     <div class="relative mt-7">
       <NuxtImg
@@ -34,7 +34,7 @@ function openModal(n: keyof typeof is) {
         <Card class="w-96 basis-full sm:basis-2/5" style="min-width: 300px">
           <template #title>
             <div class="text-center">
-              {{ t('main.donate.money.title') }}
+              {{ t('index.donate.money.title') }}
             </div>
           </template>
           <template #content>
@@ -49,47 +49,47 @@ function openModal(n: keyof typeof is) {
               </Button>
             </div>
             <div class="mt-5 px-5 italic">
-              {{ t('main.donate.money.messages.text') }}
+              {{ t('index.donate.money.messages.text') }}
             </div>
           </template>
         </Card>
         <Card class="w-96 basis-full sm:basis-2/5" style="min-width: 300px">
           <template #title>
             <div class="text-center">
-              {{ t('main.donate.goods.title') }}
+              {{ t('index.donate.goods.title') }}
             </div>
           </template>
           <template #subtitle>
             <div class="text-center">
-              {{ t('main.donate.goods.messages.title') }}
+              {{ t('index.donate.goods.messages.title') }}
             </div>
           </template>
           <template #content>
             <ul class="!mt-5 !list-disc !px-5">
-              <li>{{ t('main.donate.goods.messages.food') }}</li>
-              <li>{{ t('main.donate.goods.messages.medicine') }}</li>
-              <li>{{ t('main.donate.goods.messages.bed') }}</li>
-              <li>{{ t('main.donate.goods.messages.mobility') }}</li>
-              <li>{{ t('main.donate.goods.messages.alternative') }}</li>
+              <li>{{ t('index.donate.goods.messages.food') }}</li>
+              <li>{{ t('index.donate.goods.messages.medicine') }}</li>
+              <li>{{ t('index.donate.goods.messages.bed') }}</li>
+              <li>{{ t('index.donate.goods.messages.mobility') }}</li>
+              <li>{{ t('index.donate.goods.messages.alternative') }}</li>
             </ul>
           </template>
         </Card>
         <Card class="w-96 basis-full sm:basis-2/5" style="min-width: 300px">
           <template #title>
-            <div class="text-center">{{ t('main.donate.volunteer.title') }}</div>
+            <div class="text-center">{{ t('index.donate.volunteer.title') }}</div>
           </template>
           <template #subtitle>
-            <div class="text-center">{{ t('main.donate.volunteer.messages.title') }}</div>
+            <div class="text-center">{{ t('index.donate.volunteer.messages.title') }}</div>
           </template>
           <template #content>
             <ul class="!mt-5 !list-disc !px-5">
-              <li>{{ t('main.donate.volunteer.messages.transport') }}</li>
-              <li>{{ t('main.donate.volunteer.messages.accompany') }}</li>
-              <li>{{ t('main.donate.volunteer.messages.work') }}</li>
-              <li>{{ t('main.donate.volunteer.messages.help') }}</li>
+              <li>{{ t('index.donate.volunteer.messages.transport') }}</li>
+              <li>{{ t('index.donate.volunteer.messages.accompany') }}</li>
+              <li>{{ t('index.donate.volunteer.messages.work') }}</li>
+              <li>{{ t('index.donate.volunteer.messages.help') }}</li>
             </ul>
             <div class="mt-5 px-5 italic">
-              {{ t('main.donate.volunteer.messages.text') }}
+              {{ t('index.donate.volunteer.messages.text') }}
             </div>
           </template>
         </Card>

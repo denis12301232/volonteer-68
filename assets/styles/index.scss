@@ -1,4 +1,5 @@
 @import './scroll.scss';
+@import './util.scss';
 @font-face {
   font-family: 'Roboto';
   src: url('/fonts/Roboto-Light.ttf') format('truetype');
@@ -16,14 +17,19 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
 }
 
 #__nuxt {
   height: 100%;
   display: flex;
   flex-direction: column;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  overflow-x: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    scrollbar-gutter: stable both-edges;
+  }
 }

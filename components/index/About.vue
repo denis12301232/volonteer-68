@@ -11,8 +11,8 @@ const { t } = useI18n();
     class="flex flex-col items-center bg-slate-300 p-7 dark:bg-slate-600"
   >
     <h1 class="mb-7 text-center text-4xl sm:text-6xl" id="about">
-      {{ t('main.about.title') }}
+      {{ t('index.about.title') }}
     </h1>
-    <div class="max-w-5xl text-lg" v-html="t('main.about.text')"></div>
+    <div class="max-w-5xl text-lg" v-html="t('index.about.text')"></div>
   </div>
 </template>

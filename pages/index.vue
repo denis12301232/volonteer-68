@@ -2,17 +2,23 @@
 const { t } = useI18n();
 const route = useRoute();
 definePageMeta({ layout: 'default' });
-useSeoMeta({ title: `${t('main.pageTitle')} | Волонтер 68, Харків`, description: t('main.pageTitle') });
-onMounted(() => route.hash && setTimeout(() => scrollIntoView(route.hash)));
+useSeoMeta({ title: t('index.meta.title'), description: t('index.meta.description') });
+onMounted(() => route.hash && setTimeout(() => scrollIntoView(route.hash, { behavior: 'smooth' })));
 </script>
 
 <template>
   <div class="mt-2 flex flex-col items-center sm:hidden">
-    <Button class="dark:border-blue-600 dark:bg-blue-600 dark:text-white" @click="scrollIntoView('#contacts')">
-      {{ t('main.buttons.help') }}
+    <Button
+      class="dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+      @click="scrollIntoView('#contacts', { behavior: 'smooth' })"
+    >
+      {{ t('index.button.help') }}
     </Button>
-    <Button class="mt-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white" @click="scrollIntoView('#donate')">
-      {{ t('main.buttons.donate') }}
+    <Button
+      class="mt-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+      @click="scrollIntoView('#donate', { behavior: 'smooth' })"
+    >
+      {{ t('index.button.donate') }}
     </Button>
   </div>
   <div
@@ -41,10 +47,10 @@ onMounted(() => route.hash && setTimeout(() => scrollIntoView(route.hash)));
         </div>
         <div class="flex flex-col items-center py-10 sm:py-0">
           <div class="text center text-4xl uppercase sm:ml-4 sm:text-7xl">
-            {{ t('main.messages.title') }}
+            {{ t('index.title') }}
           </div>
           <div class="mt-4 text-center text-xl font-medium sm:mt-0">
-            {{ t('main.messages.slogan') }}
+            {{ t('index.slogan') }}
           </div>
         </div>
       </div>

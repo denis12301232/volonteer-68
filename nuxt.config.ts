@@ -79,13 +79,14 @@ export default defineNuxtConfig({
         'Galleria',
         'InputNumber',
         'InputText',
+        'Menubar',
         'ProgressSpinner',
         'Sidebar',
         'ScrollPanel',
       ],
     },
     directives: {
-      include: ['animateonscroll', 'tooltip'],
+      include: ['animateonscroll', 'ripple', 'tooltip'],
     },
     composables: {
       include: [],

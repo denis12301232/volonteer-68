@@ -1,21 +1,54 @@
 {
-  "main": {
-    "pageTitle": "Main Page",
-    "messages": {
-      "title": "Volunteer-68",
-      "slogan": "We’ll make it together"
+  "layout": {
+    "default": {
+      "nav": {
+        "index": "Home",
+        "about": "About us",
+        "directions": "Areas of work",
+        "contacts": "Контакти",
+        "donate": "Support us",
+        "donateTop": "I want to help!",
+        "partners": "Partners",
+        "news": "News",
+        "help": "I need help!",
+        "projects": "Our projects"
+      },
+      "menu": {
+        "contacts": {
+          "hotLine": "Hot Line",
+          "invoTaxi": "Invo-taxi",
+          "evacuation": "Evacuation",
+          "online": "Fill in the form"
+        },
+        "projects": [
+          "Проект «Евакуація людей з інклюзією»",
+          "Проект «Надання адресної гуманітарної допомоги інвалідам, літнім людям та людям з фізичними обмеженнями",
+          "Проект «Піклувальниця»",
+          "Проект «Безпека для дітей»",
+          "Проект «Гідність та безпека»",
+          "Реабілітаційний центр для людей з інвалідністю «Мрія в дії»",
+          "Проект «Інватаксі»",
+          "Проект «60+ Активна»",
+          "Проект «Профілакторій»",
+          "Проект «Кол-центр»",
+          "Тренінговий центр ( коворкінг) для осіб з інвалідністю",
+          "Шелтер постійного перебування для осіб з інвалідністю",
+          "Кейс-менеджмент з вирішення різноманітних соціальних питань осіб з інвалідністю"
+        ],
+        "rightSidebar": {
+          "title": "Navigation"
+        }
+      }
+    }
+  },
+  "index": {
+    "title": "Volunteer-68",
+    "slogan": "We’ll make it together",
+    "meta": {
+      "title": "Home page - Volonter 68, Kharkiv",
+      "description": "Volonter 68, home page"
     },
-    "menu": {
-      "title": "Navigation",
-      "main": "Main page",
-      "about": "About us",
-      "directions": "Areas of work",
-      "contacts": "Contacts",
-      "donate": "Support us",
-      "partners": "Partners",
-      "news": "News"
-    },
-    "buttons": {
+    "button": {
       "donate": "I want to help!",
       "help": "I need help!"
     },

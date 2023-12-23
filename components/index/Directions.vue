@@ -14,22 +14,22 @@ const { t } = useI18n();
       <Button
         class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
         color="sky"
-        @click="scrollIntoView('#donate')"
+        @click="scrollIntoView('#donate', { behavior: 'smooth' })"
       >
-        {{ t('main.buttons.donate') }}
+        {{ t('index.button.donate') }}
       </Button>
       <Button
         class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
         color="sky"
-        @click="scrollIntoView('#contacts')"
+        @click="scrollIntoView('#contacts', { behavior: 'smooth' })"
       >
-        {{ t('main.buttons.help') }}
+        {{ t('index.button.help') }}
       </Button>
     </div>
     <div class="flex flex-col items-center" id="directions">
-      <h1 class="text-center text-4xl sm:text-6xl">{{ t('main.directions.title') }}</h1>
+      <h1 class="text-center text-4xl sm:text-6xl">{{ t('index.directions.title') }}</h1>
       <p class="max-w-5xl pb-14 pt-7 text-center text-lg">
-        {{ t('main.directions.subtitle') }}
+        {{ t('index.directions.subtitle') }}
       </p>
     </div>
     <div class="flex columns-2 flex-wrap justify-center gap-4">
@@ -44,7 +44,7 @@ const { t } = useI18n();
           />
         </template>
         <template #content>
-          <div class="max-w-xl px-5" v-html="t(`main.directions.content.${index}.text`)"></div>
+          <div class="max-w-xl px-5" v-html="t(`index.directions.content.${index}.text`)"></div>
         </template>
       </Card>
     </div>
@@ -52,16 +52,16 @@ const { t } = useI18n();
       <Button
         class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
         color="sky"
-        @click="scrollIntoView('#donate')"
+        @click="scrollIntoView('#donate', { behavior: 'smooth' })"
       >
-        {{ t('main.buttons.donate') }}
+        {{ t('index.button.donate') }}
       </Button>
       <Button
         class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
         color="sky"
-        @click="scrollIntoView('#contacts')"
+        @click="scrollIntoView('#contacts', { behavior: 'smooth' })"
       >
-        {{ t('main.buttons.help') }}
+        {{ t('index.button.help') }}
       </Button>
     </div>
   </div>

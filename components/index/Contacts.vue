@@ -11,16 +11,16 @@ const config = useRuntimeConfig();
     }"
     class="p-7"
   >
-    <h1 class="text-center text-4xl sm:text-6xl" id="contacts">{{ t('main.contacts.title') }}</h1>
+    <h1 class="text-center text-4xl sm:text-6xl" id="contacts">{{ t('index.contacts.title') }}</h1>
     <div class="flex flex-col justify-around sm:flex-row">
       <div class="pt-8">
-        <h2 class="text-center text-2xl sm:text-left">{{ t('main.contacts.messages.help') }}</h2>
+        <h2 class="text-center text-2xl sm:text-left">{{ t('index.contacts.messages.help') }}</h2>
         <ul class="mt-10 flex flex-col">
           <li class="mt-1 flex items-center">
             <div>
               <Icon name="prime:phone" />
             </div>
-            <span class="ml-2 font-bold">{{ t('main.contacts.messages.hotLine') }}:</span>
+            <span class="ml-2 font-bold">{{ t('index.contacts.messages.hotLine') }}:</span>
             <UiLink class="ml-2 flex items-center text-sm italic" :href="`tel:${config.public.PHONE_HOT_LINE}`">
               {{ config.public.PHONE_HOT_LINE }}
             </UiLink>
@@ -29,7 +29,7 @@ const config = useRuntimeConfig();
             <div>
               <Icon name="fa6-solid:wheelchair-move" />
             </div>
-            <span class="ml-2 font-bold">{{ t('main.contacts.messages.invoTaxi') }}:</span>
+            <span class="ml-2 font-bold">{{ t('index.contacts.messages.invoTaxi') }}:</span>
             <UiLink class="ml-2 flex items-center text-sm italic" :href="`tel:${config.public.PHONE_INVO_TAXI}`">
               {{ config.public.PHONE_INVO_TAXI }}
             </UiLink>
@@ -39,7 +39,7 @@ const config = useRuntimeConfig();
             <div>
               <Icon name="material-symbols:ambulance-sharp" />
             </div>
-            <span class="ml-2 font-bold">{{ t('main.contacts.messages.evacuation') }}:</span>
+            <span class="ml-2 font-bold">{{ t('index.contacts.messages.evacuation') }}:</span>
             <UiLink class="ml-2 flex items-center text-sm italic" :href="`tel:${config.public.PHONE_EVACUATION}`">
               {{ config.public.PHONE_EVACUATION }}
             </UiLink>
@@ -50,10 +50,10 @@ const config = useRuntimeConfig();
               <Icon name="prime:phone" />
             </div>
             <span
-              v-tooltip.top="{ value: t('main.contacts.messages.violence'), showDelay: 1000, hideDelay: 300 }"
+              v-tooltip.top="{ value: t('index.contacts.messages.violence'), showDelay: 1000, hideDelay: 300 }"
               class="ml-2 overflow-hidden text-ellipsis whitespace-nowrap font-bold"
             >
-              {{ t('main.contacts.messages.violence') }}:
+              {{ t('index.contacts.messages.violence') }}:
             </span>
             <UiLink class="ml-2 flex items-center whitespace-nowrap text-sm italic" href="tel:1547">1547</UiLink>
             <span class="px-2 text-lg">|</span>
@@ -63,7 +63,7 @@ const config = useRuntimeConfig();
             <div>
               <Icon name="prime:telegram" />
             </div>
-            <span class="ml-2 font-bold">{{ t('main.contacts.messages.telegram') }}:</span>
+            <span class="ml-2 font-bold">{{ t('index.contacts.messages.telegram') }}:</span>
             <UiLink
               class="ml-2 flex items-center text-sm italic"
               :href="`https://t.me/${config.public.TELEGRAM}`"
@@ -76,7 +76,7 @@ const config = useRuntimeConfig();
       </div>
       <div class="pt-8">
         <h2 class="text-center text-2xl sm:text-left">
-          {{ t('main.contacts.messages.bisness') }}
+          {{ t('index.contacts.messages.bisness') }}
         </h2>
         <ul class="mt-10 flex flex-col">
           <li class="mt-1 flex items-center">

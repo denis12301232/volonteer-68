@@ -41,7 +41,7 @@ function onKeyDown(e: KeyboardEvent) {
 </script>
 
 <template>
-  <div class="flex flex-col items-center px-2">
+  <div class="flex flex-col items-center p-2">
     <div class="w-full max-w-4xl">
       <Button outlined @click="goBack">
         <Icon name="prime:angle-left" />

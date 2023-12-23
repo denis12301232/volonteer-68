@@ -13,7 +13,7 @@ const { data, pending } = useFetch('/api/report', { query: { limit: 10, skip: 0 
     class="mt-7 flex flex-col items-center px-3 pb-24 pt-3"
   >
     <h1 class="text-center text-4xl font-normal sm:text-6xl" id="news">
-      {{ t('main.news.title') }}
+      {{ t('index.news.title') }}
     </h1>
     <div class="mt-7 w-full max-w-5xl">
       <ProgressSpinner v-if="pending" aria-label="Loading" />
@@ -24,7 +24,7 @@ const { data, pending } = useFetch('/api/report', { query: { limit: 10, skip: 0 
           <NuxtLink :to="localeRoute({ name: 'news-report-id', params: { id: report._id } })">
             <Button
               class="dark:border-blue-600 dark:bg-blue-600 dark:text-white"
-              :label="t('main.news.messages.open')"
+              :label="t('index.news.messages.open')"
             />
           </NuxtLink>
         </template>
