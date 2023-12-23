@@ -79,7 +79,7 @@ function onError(e: Record<string, unknown>) {
       </Button>
     </template>
     <template #title>
-      <h1 class="mt-4 text-center">{{ t('main.donate.money.messages.title') }}</h1>
+      <h1 class="mt-4 text-center">{{ t('index.donate.money.messages.title') }}</h1>
     </template>
     <template #content>
       <div class="flex flex-col">
@@ -95,7 +95,7 @@ function onError(e: Record<string, unknown>) {
           v-model="description"
           class="mt-2"
           input-class="w-full"
-          :placeholder="t('main.donate.money.messages.description')"
+          :placeholder="t('index.donate.money.messages.description')"
         />
       </div>
     </template>

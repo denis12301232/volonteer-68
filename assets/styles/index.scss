@@ -19,6 +19,7 @@ body {
   height: 100%;
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
+  --scrollbar-width: 0px !important;
 }
 
 #__nuxt {

@@ -229,7 +229,7 @@ function openMenu(type: 'left' | 'right') {
       <span class="ml-1">{{ new Date().getFullYear() }} Волонтер-68</span>
     </div>
   </footer>
-  <Sidebar v-model:visible="menu.right" :position="isLargeScreen ? 'right' : 'full'">
+  <Sidebar v-model:visible="menu.right" :position="isLargeScreen ? 'right' : 'full'" >
     <template #container="{ closeCallback }">
       <div class="h-full w-full" ref="rightMenuRef">
         <div class="relative">
@@ -281,6 +281,13 @@ function openMenu(type: 'left' | 'right') {
             @click="openMenu('right')"
           >
             {{ t('layout.default.nav.contacts') }}
+          </UiLink>
+          <UiLink
+            class="mt-4"
+            :to="localeRoute({ name: 'project' })"
+            @click="openMenu('right')"
+          >
+            {{ t('layout.default.nav.projects') }}
           </UiLink>
           <UiLink
             class="mt-4"

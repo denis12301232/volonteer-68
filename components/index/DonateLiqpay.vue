@@ -14,7 +14,7 @@ const disabled = computed(() => pending.value || !params.amount || !params.descr
       </Button>
     </template>
     <template #title>
-      <h1 class="mt-4 text-center">{{ t('main.donate.money.messages.title') }}</h1>
+      <h1 class="mt-4 text-center">{{ t('index.donate.money.messages.title') }}</h1>
     </template>
     <template #content>
       <div class="flex flex-col">
@@ -30,7 +30,7 @@ const disabled = computed(() => pending.value || !params.amount || !params.descr
           v-model="params.description"
           class="mt-2"
           input-class="w-full"
-          :placeholder="t('main.donate.money.messages.description')"
+          :placeholder="t('index.donate.money.messages.description')"
         />
       </div>
     </template>
@@ -50,7 +50,7 @@ const disabled = computed(() => pending.value || !params.amount || !params.descr
           type="submit"
         >
           <SvgLiqpay class="h-6 w-6" />
-          <span class="ml-2 font-bold">{{ t('main.donate.money.messages.donate') }}</span>
+          <span class="ml-2 font-bold">{{ t('index.donate.money.messages.donate') }}</span>
         </Button>
       </form>
     </template>
