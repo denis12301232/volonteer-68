@@ -14,14 +14,8 @@ const { goBack } = useNavigation();
       'dark:bg-gray-900',
     ]"
   >
-    <Button
-      class="ml-2 rounded-full !p-2"
-      text
-      severity="secondary"
-      aria-label="back"
-      @click="goBack"
-    >
-      <Icon name="prime:arrow-left" size="40" />
+    <Button class="ml-2 !p-2" text rounded severity="secondary" aria-label="back" @click="goBack">
+      <Icon name="prime:arrow-left" size="35" />
     </Button>
   </header>
   <main>

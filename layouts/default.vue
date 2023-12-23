@@ -10,7 +10,7 @@ const { isSwiping, direction } = useSwipe(rightMenuRef);
 const isNeedClose = computed(
   () => isSwiping.value && direction.value === 'right' && isLargeScreen.value
 );
-const items = computed(() =>[
+const items = computed(() => [
   {
     label: t('layout.default.nav.help'),
     icon: 'prime:envelope',
@@ -171,7 +171,7 @@ function openMenu(type: 'left' | 'right') {
               <Icon name="prime:bars" size="40" />
             </Button>
           </div>
-          <div class="mr-4 mt-5 hidden justify-center py-4 lg:flex">
+          <div class="mr-4 mt-5 hidden items-center justify-center py-4 lg:flex">
             <UiLink class="text-center text-sm" :to="localeRoute({ name: 'index' })">
               {{ t('layout.default.nav.index') }}
             </UiLink>
@@ -210,9 +210,24 @@ function openMenu(type: 'left' | 'right') {
   <main class="flex-auto">
     <slot />
   </main>
-  <footer class="flex flex-col items-center py-7">
-    <UiLink :href="`mailto:${config.public.EMAIL}`">{{ config.public.EMAIL }}</UiLink>
-    <div class="mt-5">
+  <footer
+    :class="[
+      'rounded-md',
+      'border',
+      'border-gray-300',
+      'bg-gray-100',
+      'py-7',
+      'flex',
+      'flex-col',
+      'items-center',
+      'dark:border-blue-900/40',
+      'dark:bg-gray-900',
+    ]"
+  >
+    <div>
+      <a :href="`mailto:${config.public.EMAIL}`" target="_blank" aria-label="email">
+        <Icon class="hover:scale-105" name="prime:envelope" />
+      </a>
       <a
         :href="`https://www.instagram.com/${config.public.INSTAGRAM}`"
         target="_blank"
@@ -229,7 +244,7 @@ function openMenu(type: 'left' | 'right') {
       <span class="ml-1">{{ new Date().getFullYear() }} Волонтер-68</span>
     </div>
   </footer>
-  <Sidebar v-model:visible="menu.right" :position="isLargeScreen ? 'right' : 'full'" >
+  <Sidebar v-model:visible="menu.right" :position="isLargeScreen ? 'right' : 'full'">
     <template #container="{ closeCallback }">
       <div class="h-full w-full" ref="rightMenuRef">
         <div class="relative">
@@ -282,11 +297,7 @@ function openMenu(type: 'left' | 'right') {
           >
             {{ t('layout.default.nav.contacts') }}
           </UiLink>
-          <UiLink
-            class="mt-4"
-            :to="localeRoute({ name: 'project' })"
-            @click="openMenu('right')"
-          >
+          <UiLink class="mt-4" :to="localeRoute({ name: 'project' })" @click="openMenu('right')">
             {{ t('layout.default.nav.projects') }}
           </UiLink>
           <UiLink

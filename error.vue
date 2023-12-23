@@ -6,6 +6,7 @@ interface IError {
 }
 
 const props = defineProps<{ error: IError }>();
+const theme = useTheme();
 useSeoMeta({ title: `${props.error.statusCode} | Волонтер 68, Харків` });
 
 function handleError() {
@@ -14,6 +15,15 @@ function handleError() {
 </script>
 
 <template>
+  <Html
+    :class="[
+      theme,
+      {
+        'bg-slate-950': theme === 'dark',
+        'text-white': theme === 'dark',
+      },
+    ]"
+  />
   <NuxtLayout name="simple">
     <div class="flex h-screen flex-col items-center justify-center">
       <div class="flex items-center">
@@ -21,7 +31,10 @@ function handleError() {
         <Divider layout="vertical" />
         <div class="text-lg">{{ error.statusMessage }}</div>
       </div>
-      <Button class="mt-4" icon="pi pi-home" label="Home" outlined @click="handleError" />
+      <Button class="mt-4 flex items-center" outlined @click="handleError">
+        <Icon name="prime:home" size="35" />
+        <span class="ml-2 text-lg font-bold">Home</span>
+      </Button>
     </div>
   </NuxtLayout>
 </template>
