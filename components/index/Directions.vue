@@ -33,7 +33,12 @@ const { t } = useI18n();
       </p>
     </div>
     <div class="flex columns-2 flex-wrap justify-center gap-4">
-      <Card v-for="(item, index) in 4" :key="item" class="w-96 basis-full sm:basis-2/5" style="min-width: 300px">
+      <Card
+        v-for="(item, index) in 4"
+        :key="item"
+        class="w-96 basis-full sm:basis-2/5"
+        style="min-width: 300px"
+      >
         <template #header>
           <NuxtImg
             class="h-auto w-full select-none"
@@ -44,7 +49,7 @@ const { t } = useI18n();
           />
         </template>
         <template #content>
-          <div class="max-w-xl px-5" v-html="t(`index.directions.content.${index}.text`)"></div>
+          <div class="px-5" v-html="t(`index.directions.content.${index}.text`)"></div>
         </template>
       </Card>
     </div>
