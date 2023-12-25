@@ -21,7 +21,10 @@ const config = useRuntimeConfig();
               <Icon name="prime:phone" />
             </div>
             <span class="ml-2 font-bold">{{ t('index.contacts.messages.hotLine') }}:</span>
-            <UiLink class="ml-2 flex items-center text-sm italic" :href="`tel:${config.public.PHONE_HOT_LINE}`">
+            <UiLink
+              class="ml-2 flex items-center text-sm italic"
+              :href="`tel:${config.public.PHONE_HOT_LINE}`"
+            >
               {{ config.public.PHONE_HOT_LINE }}
             </UiLink>
           </li>
@@ -30,7 +33,10 @@ const config = useRuntimeConfig();
               <Icon name="fa6-solid:wheelchair-move" />
             </div>
             <span class="ml-2 font-bold">{{ t('index.contacts.messages.invoTaxi') }}:</span>
-            <UiLink class="ml-2 flex items-center text-sm italic" :href="`tel:${config.public.PHONE_INVO_TAXI}`">
+            <UiLink
+              class="ml-2 flex items-center text-sm italic"
+              :href="`tel:${config.public.PHONE_INVO_TAXI}`"
+            >
               {{ config.public.PHONE_INVO_TAXI }}
             </UiLink>
             <span class="ml-2">(Інна)</span>
@@ -40,7 +46,10 @@ const config = useRuntimeConfig();
               <Icon name="material-symbols:ambulance-sharp" />
             </div>
             <span class="ml-2 font-bold">{{ t('index.contacts.messages.evacuation') }}:</span>
-            <UiLink class="ml-2 flex items-center text-sm italic" :href="`tel:${config.public.PHONE_EVACUATION}`">
+            <UiLink
+              class="ml-2 flex items-center text-sm italic"
+              :href="`tel:${config.public.PHONE_EVACUATION}`"
+            >
               {{ config.public.PHONE_EVACUATION }}
             </UiLink>
             <span class="ml-2">(Сергій)</span>
@@ -50,27 +59,20 @@ const config = useRuntimeConfig();
               <Icon name="prime:phone" />
             </div>
             <span
-              v-tooltip.top="{ value: t('index.contacts.messages.violence'), showDelay: 1000, hideDelay: 300 }"
+              v-tooltip.top="{
+                value: t('index.contacts.messages.violence'),
+                showDelay: 1000,
+                hideDelay: 300,
+              }"
               class="ml-2 overflow-hidden text-ellipsis whitespace-nowrap font-bold"
             >
               {{ t('index.contacts.messages.violence') }}:
             </span>
-            <UiLink class="ml-2 flex items-center whitespace-nowrap text-sm italic" href="tel:1547">1547</UiLink>
+            <UiLink class="ml-2 flex items-center whitespace-nowrap text-sm italic" href="tel:1547"
+              >1547</UiLink
+            >
             <span class="px-2 text-lg">|</span>
             <UiLink class="text-sm italic" href="tel:116123">116123</UiLink>
-          </li>
-          <li class="mt-1 flex items-center">
-            <div>
-              <Icon name="prime:telegram" />
-            </div>
-            <span class="ml-2 font-bold">{{ t('index.contacts.messages.telegram') }}:</span>
-            <UiLink
-              class="ml-2 flex items-center text-sm italic"
-              :href="`https://t.me/${config.public.TELEGRAM}`"
-              target="_blank"
-            >
-              @{{ config.public.TELEGRAM }}
-            </UiLink>
           </li>
         </ul>
       </div>
@@ -89,9 +91,36 @@ const config = useRuntimeConfig();
           </li>
           <li class="mt-1 flex items-center">
             <div>
+              <Icon name="prime:telegram" />
+            </div>
+            <UiLink
+              class="ml-2 flex items-center text-sm italic"
+              :href="`https://t.me/${config.public.TELEGRAM}`"
+              target="_blank"
+            >
+              @{{ config.public.TELEGRAM }}
+            </UiLink>
+          </li>
+          <li class="mt-1 flex items-center">
+            <div>
+              <Icon name="prime:facebook" />
+            </div>
+            <UiLink
+              class="ml-2 flex items-center text-sm italic"
+              :href="config.public.FACEBOOK"
+              target="_blank"
+            >
+              {{ t('index.contacts.messages.facebook') }}
+            </UiLink>
+          </li>
+          <li class="mt-1 flex items-center">
+            <div>
               <Icon name="prime:instagram" />
             </div>
-            <UiLink class="ml-2 flex items-center" :href="`https://www.instagram.com/${config.public.INSTAGRAM}`">
+            <UiLink
+              class="ml-2 flex items-center"
+              :href="`https://www.instagram.com/${config.public.INSTAGRAM}`"
+            >
               @{{ config.public.INSTAGRAM }}
             </UiLink>
           </li>

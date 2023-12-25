@@ -224,9 +224,15 @@ function openMenu(type: 'left' | 'right') {
       'dark:bg-gray-900',
     ]"
   >
-    <div>
+    <div class="flex items-center">
       <a :href="`mailto:${config.public.EMAIL}`" target="_blank" aria-label="email">
         <Icon class="hover:scale-105" name="prime:envelope" />
+      </a>
+      <a :href="`https://t.me/${config.public.TELEGRAM}`" target="_blank" aria-label="telegram">
+        <Icon class="hover:scale-105" name="prime:telegram" />
+      </a>
+      <a :href="config.public.FACEBOOK" target="_blank" aria-label="facebook">
+        <Icon class="hover:scale-105" name="prime:facebook" />
       </a>
       <a
         :href="`https://www.instagram.com/${config.public.INSTAGRAM}`"
@@ -234,9 +240,6 @@ function openMenu(type: 'left' | 'right') {
         aria-label="instagram"
       >
         <Icon class="hover:scale-105" name="prime:instagram" />
-      </a>
-      <a :href="`https://t.me/${config.public.TELEGRAM}`" target="_blank" aria-label="telegram">
-        <Icon class="hover:scale-105" name="prime:telegram" />
       </a>
     </div>
     <div class="mt-5 flex items-center italic">
@@ -321,6 +324,28 @@ function openMenu(type: 'left' | 'right') {
             {{ t('layout.default.nav.news') }}
           </UiLink>
           <ThemeToggler class="my-4" />
+          <div class="flex items-center">
+            <a :href="`mailto:${config.public.EMAIL}`" target="_blank" aria-label="email">
+              <Icon class="hover:scale-105" name="prime:envelope" />
+            </a>
+            <a
+              :href="`https://t.me/${config.public.TELEGRAM}`"
+              target="_blank"
+              aria-label="telegram"
+            >
+              <Icon class="hover:scale-105" name="prime:telegram" />
+            </a>
+            <a :href="config.public.FACEBOOK" target="_blank" aria-label="facebook">
+              <Icon class="hover:scale-105" name="prime:facebook" />
+            </a>
+            <a
+              :href="`https://www.instagram.com/${config.public.INSTAGRAM}`"
+              target="_blank"
+              aria-label="instagram"
+            >
+              <Icon class="hover:scale-105" name="prime:instagram" />
+            </a>
+          </div>
         </div>
       </div>
     </template>

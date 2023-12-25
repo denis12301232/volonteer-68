@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     public: {
       TELEGRAM: process.env.TELEGRAM,
       INSTAGRAM: process.env.INSTAGRAM,
+      FACEBOOK: process.env.FACEBOOK,
       PHONE_HOT_LINE: process.env.PHONE_HOT_LINE,
       PHONE_INVO_TAXI: process.env.PHONE_INVO_TAXI,
       PHONE_EVACUATION: process.env.PHONE_EVACUATION,
@@ -37,7 +38,14 @@ export default defineNuxtConfig({
       MONGO_DB_PASSWORD: process.env.MONGO_DB_PASSWORD,
     },
   },
-  modules: ['@nuxt/image', '@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@vueuse/nuxt', 'nuxt-primevue', 'nuxt-icon'],
+  modules: [
+    '@nuxt/image',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/i18n',
+    '@vueuse/nuxt',
+    'nuxt-primevue',
+    'nuxt-icon',
+  ],
   i18n: {
     vueI18n: './i18n/i18n.config.ts',
     locales: [
