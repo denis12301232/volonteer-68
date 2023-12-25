@@ -1,8 +1,10 @@
 <script setup lang="ts">
 const { t, d } = useI18n();
-const { goBack, router } = useNavigation();
+const router = useRouter();
 const route = useRoute();
-const { data: report, pending } = useFetch(`/api/report/${route.params.id}`, { watch: [() => route.params.id] });
+const { data: report, pending } = useFetch(`/api/report/${route.params.id}`, {
+  watch: [() => route.params.id],
+});
 const open = ref(false);
 const index = ref(0);
 const responsiveOptions = ref([
@@ -23,7 +25,10 @@ const responsiveOptions = ref([
     numVisible: 1,
   },
 ]);
-useSeoMeta({ title: `${t('news.report.pageTitle')} | Волонтер 68, Харків`, description: t('news.report.pageTitle') });
+useSeoMeta({
+  title: `${t('news.report.pageTitle')} | Волонтер 68, Харків`,
+  description: t('news.report.pageTitle'),
+});
 onMounted(() => document.addEventListener('keydown', onKeyDown));
 onUnmounted(() => document.removeEventListener('keydown', onKeyDown));
 watchEffect(() => !report.value && !pending.value && router.push('/'));
@@ -42,12 +47,6 @@ function onKeyDown(e: KeyboardEvent) {
 
 <template>
   <div class="flex flex-col items-center p-2">
-    <div class="w-full max-w-4xl">
-      <Button outlined @click="goBack">
-        <Icon name="prime:angle-left" />
-        <span class="font-bold">{{ t('news.report.messages.back') }}</span>
-      </Button>
-    </div>
     <div v-if="pending" class="flex justify-center py-10">
       <ProgressSpinner />
     </div>
@@ -150,7 +149,13 @@ function onKeyDown(e: KeyboardEvent) {
         }"
       >
         <template #item="slotProps">
-          <NuxtImg class="select-none" sizes="100%" :src="slotProps.item" placeholder alt="report" />
+          <NuxtImg
+            class="select-none"
+            sizes="100%"
+            :src="slotProps.item"
+            placeholder
+            alt="report"
+          />
         </template>
       </Galleria>
     </div>

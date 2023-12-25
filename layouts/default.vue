@@ -216,7 +216,7 @@ function openMenu(type: 'left' | 'right') {
       'border',
       'border-gray-300',
       'bg-gray-100',
-      'py-7',
+      'py-4',
       'flex',
       'flex-col',
       'items-center',
@@ -244,7 +244,16 @@ function openMenu(type: 'left' | 'right') {
       <span class="ml-1">{{ new Date().getFullYear() }} Волонтер-68</span>
     </div>
   </footer>
-  <Sidebar v-model:visible="menu.right" :position="isLargeScreen ? 'right' : 'full'">
+  <Sidebar
+    v-model:visible="menu.right"
+    :position="isLargeScreen ? 'right' : 'full'"
+    :block-scroll="!isLargeScreen"
+    :pt="{
+      mask: {
+        class: ['bg-trasnparent'],
+      },
+    }"
+  >
     <template #container="{ closeCallback }">
       <div class="h-full w-full" ref="rightMenuRef">
         <div class="relative">
@@ -262,29 +271,9 @@ function openMenu(type: 'left' | 'right') {
           </Button>
         </div>
         <Divider />
-        <ScrollPanel
-          class="w-full"
+        <div
+          class="gutter-both flex flex-col items-center overflow-auto"
           style="height: calc(100% - 100px)"
-          :pt-options="{ mergeProps: true, mergeSections: true }"
-          :pt="{
-            root: {
-              class: ['group'],
-            },
-            barY: {
-              class: [
-                'bg-sky-500',
-                'opacity-0',
-                'group-hover:opacity-100',
-                'transition-opacity',
-                'ease-in',
-                'duration-300',
-                '!cursor-grab',
-              ],
-            },
-            content: {
-              class: ['flex', 'flex-col', 'items-center'],
-            },
-          }"
         >
           <LangSwitcher class="!w-24" />
           <UiLink class="mt-4" :to="localeRoute({ name: 'index' })" @click="openMenu('right')">
@@ -332,7 +321,7 @@ function openMenu(type: 'left' | 'right') {
             {{ t('layout.default.nav.news') }}
           </UiLink>
           <ThemeToggler class="my-4" />
-        </ScrollPanel>
+        </div>
       </div>
     </template>
   </Sidebar>

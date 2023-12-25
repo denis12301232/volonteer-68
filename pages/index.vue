@@ -1,6 +1,8 @@
 <script setup lang="ts">
 const { t } = useI18n();
 const route = useRoute();
+const router = useRouter();
+const localeRoute = useLocaleRoute();
 definePageMeta({ layout: 'default' });
 useSeoMeta({ title: t('index.meta.title'), description: t('index.meta.description') });
 onMounted(() => route.hash && setTimeout(() => scrollIntoView(route.hash, { behavior: 'smooth' })));
@@ -10,13 +12,13 @@ onMounted(() => route.hash && setTimeout(() => scrollIntoView(route.hash, { beha
   <div class="mt-2 flex flex-col items-center sm:hidden">
     <Button
       class="dark:border-blue-600 dark:bg-blue-600 dark:text-white"
-      @click="scrollIntoView('#contacts', { behavior: 'smooth' })"
+      @click="router.push(localeRoute({ name: 'index', hash: '#contacts' })!)"
     >
       {{ t('index.button.help') }}
     </Button>
     <Button
       class="mt-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white"
-      @click="scrollIntoView('#donate', { behavior: 'smooth' })"
+      @click="router.push(localeRoute({ name: 'index', hash: '#donate' })!)"
     >
       {{ t('index.button.donate') }}
     </Button>
