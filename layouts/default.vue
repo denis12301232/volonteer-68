@@ -122,7 +122,7 @@ function openMenu(type: 'left' | 'right') {
         <span></span>
       </template>
       <template #start>
-        <NuxtImg class="mr-4" src="/images/logo.webp" sizes="64px sm:72px md:96px" alt="logo" />
+        <Svg class="mr-4 h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24" name="logo"></Svg>
       </template>
       <template #item="{ item, props, hasSubmenu, root }">
         <NuxtLink

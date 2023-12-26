@@ -2,7 +2,11 @@
 const emit = defineEmits<{ close: [] }>();
 const { locale, t } = useI18n();
 const params = reactive({ amount: 0, currency: 'USD', description: '', language: locale.value });
-const { data, pending } = await useFetch('/api/liqpay/donate', { params, immediate: false, watch: [params] });
+const { data, pending } = await useFetch('/api/liqpay/donate', {
+  params,
+  immediate: false,
+  watch: [params],
+});
 const disabled = computed(() => pending.value || !params.amount || !params.description);
 </script>
 
@@ -49,7 +53,7 @@ const disabled = computed(() => pending.value || !params.amount || !params.descr
           :disabled="disabled"
           type="submit"
         >
-          <SvgLiqpay class="h-6 w-6" />
+          <Svg class="h-4 w-4" name="liqpay"></Svg>
           <span class="ml-2 font-bold">{{ t('index.donate.money.messages.donate') }}</span>
         </Button>
       </form>

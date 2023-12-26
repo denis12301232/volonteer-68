@@ -44,7 +44,7 @@ function openModal(n: keyof typeof is) {
                 outlined
                 @click="openModal('liqpay')"
               >
-                <SvgLiqpay class="h-4 w-4" />
+                <Svg class="h-4 w-4" name="liqpay"></Svg>
                 <span class="ml-2 font-bold">LiqPay</span>
               </Button>
               <Button
