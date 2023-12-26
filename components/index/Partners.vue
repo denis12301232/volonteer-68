@@ -20,15 +20,15 @@ const partners = [
     id="partners"
   >
     <h1 class="mt-10 text-center text-4xl sm:text-6xl">{{ t('index.partners.title') }}</h1>
-    <div class="mt-20 flex max-w-7xl flex-wrap justify-center items-center gap-2 p-1">
-      <a class="flex w-80 justify-center p-1" :href="partners.at(0)?.href" target="_blank">
+    <div class="mt-10 sm:mt-20 flex max-w-7xl flex-wrap items-center justify-center gap-2 p-1">
+      <a class="flex w-72 justify-center p-1" :href="partners.at(0)?.href" target="_blank">
         <NuxtImg class="w-full" :src="partners.at(0)?.logo" />
       </a>
-      <a class="flex w-80 justify-center" :href="partners.at(1)?.href" target="_blank">
+      <a class="flex w-72 justify-center" :href="partners.at(1)?.href" target="_blank">
         <NuxtImg class="w-full" :src="partners.at(1)?.logo" />
       </a>
       <a
-        class="flex w-96 justify-center rounded-sm bg-black p-5"
+        class="flex w-72 justify-center rounded-sm bg-black p-5"
         :href="partners.at(2)?.href"
         target="_blank"
       >
@@ -42,7 +42,7 @@ const partners = [
         <NuxtImg class="w-full" :src="partners.at(3)?.logo" />
       </a>
       <a
-        class="flex w-36 h-32 justify-center rounded-sm bg-fuchsia-900 p-5"
+        class="flex h-32 w-36 justify-center rounded-sm bg-fuchsia-900 p-5"
         :href="partners.at(4)?.href"
         target="_blank"
       >
