@@ -6,5 +6,5 @@ export class LiqPay {
     currency: string().required().oneOf(['USD', 'EUR', 'UAH', 'BYN', 'KZT']),
     description: string().required(),
     language: string().required().oneOf(['en', 'uk']),
-  });
+  }).required();
 }

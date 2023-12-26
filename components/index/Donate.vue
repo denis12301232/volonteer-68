@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n();
-const dialog = ref(false);
+const modals = reactive({ donate: false });
 const name = ref<keyof typeof is>('paypal');
 const is = {
   paypal: resolveComponent('IndexDonatePaypal'),
@@ -9,7 +9,7 @@ const is = {
 
 function openModal(n: keyof typeof is) {
   name.value = n;
-  dialog.value = !dialog.value;
+  modals.donate = !modals.donate;
 }
 </script>
 
@@ -102,9 +102,8 @@ function openModal(n: keyof typeof is) {
           </template>
         </Card>
       </div>
-
       <Dialog
-        v-model:visible="dialog"
+        v-model:visible="modals.donate"
         style="max-width: 560px; width: 100%; min-width: 320px"
         modal
         block-scroll

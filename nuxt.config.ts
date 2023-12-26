@@ -20,6 +20,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      DOMAIN_URL: process.env.DOMAIN_URL,
       TELEGRAM: process.env.TELEGRAM,
       INSTAGRAM: process.env.INSTAGRAM,
       FACEBOOK: process.env.FACEBOOK,
@@ -32,6 +33,8 @@ export default defineNuxtConfig({
     },
     private: {
       PAYPAL_CLIENT_SECRET: process.env.PAYPAL_CLIENT_SECRET,
+      PAYPAL_AUTH_URL: process.env.PAYPAL_AUTH_URL,
+      PAYPAL_CREATE_ORDER_URL: process.env.PAYPAL_CREATE_ORDER_URL,
       LIQPAY_PRIVATE_KEY: process.env.LIQPAY_PRIVATE_KEY,
       MONGO_DB_NAME: process.env.MONGO_DB_NAME,
       MONGO_DB_USER: process.env.MONGO_DB_USER,
