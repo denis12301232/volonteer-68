@@ -1,5 +1,13 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const partners = [
+  { logo: '/images/eef.svg', href: 'https://eef.org.ua' },
+  { logo: '/images/unwomen.svg', href: 'https://www.unwomen.org' },
+  { logo: '/images/wphfund.png', href: 'https://wphfund.org' },
+  { logo: '/images/vostok-sos.svg', href: 'https://vostok-sos.org' },
+  { logo: '/images/ednannia.png', href: 'https://ednannia.ua' },
+  { logo: '/images/eda.png', href: 'https://www.eda.admin.ch/countries/ukraine/uk/home"' },
+];
 </script>
 
 <template>
@@ -11,92 +19,45 @@ const { t } = useI18n();
     class="flex flex-col items-center"
     id="partners"
   >
-    <div
-      class="flex w-full flex-col justify-center bg-slate-300 py-10 dark:bg-slate-600 sm:py-20 md:flex-row"
-    >
-      <h1
-        class="border-r pb-10 pt-0 text-center text-4xl sm:text-6xl md:border-white md:pb-0 md:pr-5 md:pt-20"
+    <h1 class="mt-10 text-center text-4xl sm:text-6xl">{{ t('index.partners.title') }}</h1>
+    <div class="mt-20 flex max-w-7xl flex-wrap justify-center items-center gap-2 p-1">
+      <a class="flex w-80 justify-center p-1" :href="partners.at(0)?.href" target="_blank">
+        <NuxtImg class="w-full" :src="partners.at(0)?.logo" />
+      </a>
+      <a class="flex w-80 justify-center" :href="partners.at(1)?.href" target="_blank">
+        <NuxtImg class="w-full" :src="partners.at(1)?.logo" />
+      </a>
+      <a
+        class="flex w-96 justify-center rounded-sm bg-black p-5"
+        :href="partners.at(2)?.href"
+        target="_blank"
       >
-        {{ t('index.partners.title') }}
-      </h1>
-      <div class="m-auto px-10 md:m-0">
-        <ul class="list-disc">
-          <li>
-            <UiLink
-              class="text-xl"
-              href="https://kharkivoda.gov.ua/oblasna-derzhavna-administratsiya/struktura-administratsiyi/strukturni-pidrozdili/139"
-              target="_blank"
-              border
-              dashed
-            >
-              Департамент соціального захисту Харківської ОВА
-            </UiLink>
-          </li>
-          <li>
-            <UiLink
-              class="text-xl"
-              href="https://kharkivoda.gov.ua/oblasna-derzhavna-administratsiya/struktura-administratsiyi/strukturni-pidrozdili/143"
-              target="_blank"
-              border
-              dashed
-            >
-              Департамент цивільного захисту Харківської ОВА
-            </UiLink>
-          </li>
-          <li>
-            <UiLink
-              class="text-xl"
-              href="https://www.city.kharkiv.ua/uk/gorodskaya-vlast/ispolnitelnyie-organyi/rajonnyie-administraczii/kominternovskij-rajon/administracziya.html"
-              target="_blank"
-              border
-              dashed
-            >
-              Адміністрація Слобідського району Харківської міської ради
-            </UiLink>
-          </li>
-          <li>
-            <UiLink class="text-xl" href="https://www.pz.gov.ua/" target="_blank" border dashed>
-              Адміністрація Харківського вокзалу Південної залізниці
-            </UiLink>
-          </li>
-        </ul>
-        <ul class="mt-10 list-disc">
-          <li>
-            <UiLink class="text-xl" href="https://purple-vest.net" target="_blank" border dashed>
-              Purple Vest Mission
-            </UiLink>
-          </li>
-          <li>
-            <UiLink
-              class="text-xl"
-              href="https://www.aisrael.org/eng"
-              target="_blank"
-              border
-              dashed
-            >
-              Access Israel
-            </UiLink>
-          </li>
-          <li>
-            <UiLink class="text-xl" href="https://novaukraine.org" target="_blank" border dashed>
-              Nova Ukraine
-            </UiLink>
-          </li>
-          <li>
-            <UiLink class="text-xl" href="https://vostok-sos.org" target="_blank" border dashed>
-              Благодійна організація «БФ "Восток-Сос"»
-            </UiLink>
-          </li>
-          <li>
-            <UiLink class="text-xl" href="https://wphfund.org" target="_blank" border dashed>
-              Women’s Pease&Humanitarian Fund
-            </UiLink>
-          </li>
-        </ul>
-      </div>
+        <NuxtImg class="w-full" :src="partners.at(2)?.logo" />
+      </a>
+      <a
+        class="flex h-32 justify-center rounded-sm bg-black p-1"
+        :href="partners.at(3)?.href"
+        target="_blank"
+      >
+        <NuxtImg class="w-full" :src="partners.at(3)?.logo" />
+      </a>
+      <a
+        class="flex w-36 h-32 justify-center rounded-sm bg-fuchsia-900 p-5"
+        :href="partners.at(4)?.href"
+        target="_blank"
+      >
+        <NuxtImg class="w-full" :src="partners.at(4)?.logo" />
+      </a>
+      <a
+        class="flex w-72 justify-center rounded-sm bg-slate-400 p-5"
+        :href="partners.at(5)?.href"
+        target="_blank"
+      >
+        <NuxtImg :src="partners.at(5)?.logo" />
+      </a>
     </div>
     <div
-      class="flex w-full flex-col items-center bg-gray-400 p-7 text-center text-2xl dark:bg-gray-700"
+      class="mt-10 flex w-full flex-col items-center bg-stone-100 p-7 text-center text-2xl dark:bg-gray-800"
     >
       <div class="max-w-4xl">
         {{ t('index.partners.messages.work') }}
