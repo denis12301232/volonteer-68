@@ -8,7 +8,7 @@ const query = reactive({
   locale: computed(() => locale.value),
 });
 const { data, status, execute } = useAsyncData(
-  'paypal-donate',
+  'donate-paypal',
   () => $fetch('/api/paypal/donate', { query }),
   {
     immediate: false,
@@ -18,7 +18,12 @@ const { data, status, execute } = useAsyncData(
 const disabled = computed(() => status.value === 'pending' || !query.amount || !query.description);
 const src = computed(() => data.value?.links.filter((link) => link.rel === 'approve').at(0)?.href);
 
-watch(src, (n) => n && window.open(n));
+watch(src, onSrc);
+
+function onSrc(n?: string) {
+  navigateTo(n, { external: true, open: { target: '_blank' } });
+  emit('close');
+}
 </script>
 
 <template>

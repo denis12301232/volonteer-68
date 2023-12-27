@@ -18,6 +18,7 @@ export default defineEventHandler((event) => {
       description: query.description,
       order_id: Date.now() + Math.random().toString(),
       language: query.language,
+      result_url: `${config.public.DOMAIN_URL}`,
     };
 
     const data = Buffer.from(JSON.stringify(json)).toString('base64');
