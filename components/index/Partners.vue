@@ -20,40 +20,40 @@ const partners = [
     id="partners"
   >
     <h1 class="mt-10 text-center text-4xl sm:text-6xl">{{ t('index.partners.title') }}</h1>
-    <div class="mt-10 sm:mt-20 flex max-w-7xl flex-wrap items-center justify-center gap-2 p-1">
+    <div class="mt-10 flex max-w-7xl flex-wrap items-center justify-center gap-2 p-1 sm:mt-20">
       <a class="flex w-72 justify-center p-1" :href="partners.at(0)?.href" target="_blank">
-        <NuxtImg class="w-full" :src="partners.at(0)?.logo" />
+        <NuxtImg class="w-full" :src="partners.at(0)?.logo" loading="lazy" />
       </a>
       <a class="flex w-72 justify-center" :href="partners.at(1)?.href" target="_blank">
-        <NuxtImg class="w-full" :src="partners.at(1)?.logo" />
+        <NuxtImg class="w-full" :src="partners.at(1)?.logo" loading="lazy" />
       </a>
       <a
         class="flex w-72 justify-center rounded-sm bg-black p-5"
         :href="partners.at(2)?.href"
         target="_blank"
       >
-        <NuxtImg class="w-full" :src="partners.at(2)?.logo" />
+        <NuxtImg class="w-full" :src="partners.at(2)?.logo" loading="lazy" />
       </a>
       <a
         class="flex h-32 justify-center rounded-sm bg-black p-1"
         :href="partners.at(3)?.href"
         target="_blank"
       >
-        <NuxtImg class="w-full" :src="partners.at(3)?.logo" />
+        <NuxtImg class="w-full" :src="partners.at(3)?.logo" loading="lazy" />
       </a>
       <a
         class="flex h-32 w-36 justify-center rounded-sm bg-fuchsia-900 p-5"
         :href="partners.at(4)?.href"
         target="_blank"
       >
-        <NuxtImg class="w-full" :src="partners.at(4)?.logo" />
+        <NuxtImg class="w-full" :src="partners.at(4)?.logo" loading="lazy" />
       </a>
       <a
         class="flex w-72 justify-center rounded-sm bg-slate-400 p-5"
         :href="partners.at(5)?.href"
         target="_blank"
       >
-        <NuxtImg :src="partners.at(5)?.logo" />
+        <NuxtImg :src="partners.at(5)?.logo" loading="lazy" />
       </a>
     </div>
     <div
