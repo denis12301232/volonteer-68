@@ -122,12 +122,14 @@ function openMenu(type: 'left' | 'right') {
         <span></span>
       </template>
       <template #start>
-        <Svg
-          class="mx-3 h-16 w-16 dark:fill-white sm:h-20 sm:w-20 md:h-24 md:w-24"
-          name="logo"
-        ></Svg>
+        <NuxtLink :to="localeRoute({ name: 'index' })">
+          <Svg
+            class="mx-3 h-16 w-16 dark:fill-white sm:h-20 sm:w-20 md:h-24 md:w-24"
+            name="logo"
+          ></Svg>
+        </NuxtLink>
       </template>
-      <template #item="{ item, props, hasSubmenu, root }">
+      <template #item="{ item, props, hasSubmenu }">
         <NuxtLink
           v-ripple
           class="hidden items-center md:flex"

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
+const router = useRouter();
+const localeRoute = useLocaleRoute();
 </script>
 
 <template>
@@ -14,14 +16,14 @@ const { t } = useI18n();
       <Button
         class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
         color="sky"
-        @click="scrollIntoView('#donate', { behavior: 'smooth' })"
+        @click="router.push(localeRoute({ name: 'index', hash: '#donate' })!)"
       >
         {{ t('index.button.donate') }}
       </Button>
       <Button
         class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
         color="sky"
-        @click="scrollIntoView('#contacts', { behavior: 'smooth' })"
+        @click="router.push(localeRoute({ name: 'index', hash: '#contacts' })!)"
       >
         {{ t('index.button.help') }}
       </Button>
@@ -57,14 +59,14 @@ const { t } = useI18n();
       <Button
         class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
         color="sky"
-        @click="scrollIntoView('#donate', { behavior: 'smooth' })"
+        @click="router.push(localeRoute({ name: 'index', hash: '#donate' })!)"
       >
         {{ t('index.button.donate') }}
       </Button>
       <Button
         class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
         color="sky"
-        @click="scrollIntoView('#contacts', { behavior: 'smooth' })"
+        @click="router.push(localeRoute({ name: 'index', hash: '#contacts' })!)"
       >
         {{ t('index.button.help') }}
       </Button>

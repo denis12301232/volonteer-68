@@ -64,13 +64,13 @@ const config = useRuntimeConfig();
                 showDelay: 1000,
                 hideDelay: 300,
               }"
-              class="ml-2 overflow-hidden text-ellipsis whitespace-nowrap font-bold"
+              class="ml-2 truncate font-bold"
             >
               {{ t('index.contacts.messages.violence') }}:
             </span>
-            <UiLink class="ml-2 flex items-center whitespace-nowrap text-sm italic" href="tel:1547"
-              >1547</UiLink
-            >
+            <UiLink class="ml-2 flex items-center whitespace-nowrap text-sm italic" href="tel:1547">
+              1547
+            </UiLink>
             <span class="px-2 text-lg">|</span>
             <UiLink class="text-sm italic" href="tel:116123">116123</UiLink>
           </li>
@@ -118,10 +118,10 @@ const config = useRuntimeConfig();
               <Icon name="prime:instagram" />
             </div>
             <UiLink
-              class="ml-2 flex items-center"
+              class="ml-2 flex items-center text-sm italic"
               :href="`https://www.instagram.com/${config.public.INSTAGRAM}`"
             >
-              @{{ config.public.INSTAGRAM }}
+              {{ t('index.contacts.messages.instagram') }}
             </UiLink>
           </li>
         </ul>
