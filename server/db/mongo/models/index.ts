@@ -6,10 +6,6 @@ const reportSchema = new Schema(
       type: String,
       required: true,
     },
-    images: {
-      type: [String],
-      default: [],
-    },
     file: {
       type: String,
       default: '',
