@@ -87,13 +87,11 @@ export default defineNuxtConfig({
         'Dialog',
         'Divider',
         'Dropdown',
-        'Galleria',
         'InputNumber',
         'InputText',
         'Menubar',
         'ProgressSpinner',
         'Sidebar',
-        'ScrollPanel',
       ],
     },
     directives: {

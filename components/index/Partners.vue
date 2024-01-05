@@ -1,16 +1,78 @@
 <script setup lang="ts">
+import type { IPartner } from '@/types';
+import Swiper from 'swiper';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+
 const { t } = useI18n();
-const partners = [
-  { logo: '/images/eef.svg', href: 'https://eef.org.ua' },
-  { logo: '/images/unwomen.svg', href: 'https://www.unwomen.org' },
-  { logo: '/images/wphfund.png', href: 'https://wphfund.org' },
-  { logo: '/images/vostok-sos.svg', href: 'https://vostok-sos.org' },
-  { logo: '/images/ednannia.png', href: 'https://ednannia.ua' },
-  { logo: '/images/eda.png', href: 'https://www.eda.admin.ch/countries/ukraine/uk/home"' },
-  { logo: '/images/purple-vest.svg', href: 'https://purple-vest.net' },
-  { logo: '/images/aisrael.png', href: 'https://www.aisrael.org/eng' },
-  { logo: '/images/novaukraine.svg', href: 'https://novaukraine.org' },
-];
+const isLargeScreen = inject<Ref<boolean>>('isLargeScreen');
+const partners = ref<IPartner[]>([
+  {
+    logo: '/images/aisrael.png',
+    href: 'https://www.aisrael.org/eng',
+    width: 'auto',
+    height: 140,
+    background: 'white',
+  },
+  {
+    logo: '/images/eda.png',
+    href: 'https://www.eda.admin.ch/countries/ukraine/uk/home',
+    width: 'auto',
+    height: 90,
+    background: 'white',
+  },
+  {
+    logo: '/images/eef.svg',
+    href: 'https://eef.org.ua',
+    width: 288,
+    height: 'auto',
+    background: 'white',
+  },
+  {
+    logo: '/images/novaukraine.svg',
+    href: 'https://novaukraine.org',
+    width: 288,
+    height: 'auto',
+    background: '#172554',
+  },
+  {
+    logo: '/images/purple-vest.svg',
+    href: 'https://purple-vest.net',
+    width: 288,
+    height: 'auto',
+    background: 'white',
+  },
+  {
+    logo: '/images/unwomen.svg',
+    href: 'https://www.unwomen.org',
+    width: 288,
+    height: 'auto',
+    background: 'transparent',
+  },
+  {
+    logo: '/images/wphfund.png',
+    href: 'https://wphfund.org',
+    width: 'auto',
+    height: 60,
+    background: '#164e63',
+  },
+
+  {
+    logo: '/images/ednannia.png',
+    href: 'https://ednannia.ua',
+    width: 140,
+    height: 100,
+    background: '#4a044e',
+  },
+  {
+    logo: '/images/vostok-sos.svg',
+    href: 'https://vostok-sos.org',
+    width: 120,
+    height: 120,
+    background: '#ef4444',
+  },
+]);
+const isInited = ref(false);
 const kh = {
   logo: '/images/kharkiv.png',
   hrefs: [
@@ -20,6 +82,40 @@ const kh = {
     'https://www.pz.gov.ua',
   ],
 };
+let swiper: Swiper;
+
+onMounted(() => {
+  swiper = new Swiper('.swiper', {
+    slidesPerView: 5,
+    spaceBetween: 100,
+    modules: [Pagination],
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination-custom',
+      clickable: true,
+      bulletClass: 'mr-1 h-2 w-2 rounded-full bg-slate-300 dark:bg-slate-600',
+      bulletActiveClass: '!bg-blue-700 dark:!bg-blue-700',
+      clickableClass: 'cursor-pointer',
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 40,
+      },
+    },
+    on: {
+      init: () => (isInited.value = true),
+    },
+  });
+});
 </script>
 
 <template>
@@ -31,7 +127,9 @@ const kh = {
     class="flex flex-col items-center"
     id="partners"
   >
-    <h1 class="mt-5 text-center text-4xl sm:mt-10 sm:text-6xl">{{ t('index.partners.title') }}</h1>
+    <h1 class="mt-5 text-center text-4xl sm:mt-10 sm:text-6xl">
+      {{ t('index.partners.title') }}
+    </h1>
     <div class="mt-10 flex flex-wrap items-center justify-center">
       <div class="flex justify-center">
         <NuxtImg width="96" :src="kh.logo" loading="lazy" />
@@ -51,62 +149,39 @@ const kh = {
         </UiLink>
       </div>
     </div>
-    <div class="mt-10 flex max-w-7xl flex-wrap items-center justify-center gap-2 p-1">
-      <a class="flex w-72 justify-center p-1" :href="partners.at(0)?.href" target="_blank">
-        <NuxtImg class="w-full" :src="partners.at(0)?.logo" loading="lazy" />
-      </a>
-      <a class="flex w-72 justify-center" :href="partners.at(1)?.href" target="_blank">
-        <NuxtImg class="w-full" :src="partners.at(1)?.logo" loading="lazy" />
-      </a>
-      <a
-        class="flex w-72 justify-center rounded-sm bg-cyan-900 p-5"
-        :href="partners.at(2)?.href"
-        target="_blank"
-      >
-        <NuxtImg class="w-full" :src="partners.at(2)?.logo" loading="lazy" />
-      </a>
-      <a
-        class="flex h-32 justify-center rounded-sm bg-red-500 p-1"
-        :href="partners.at(3)?.href"
-        target="_blank"
-      >
-        <NuxtImg class="w-full" :src="partners.at(3)?.logo" loading="lazy" />
-      </a>
-      <a
-        class="flex h-32 w-36 justify-center rounded-sm bg-fuchsia-950 p-5"
-        :href="partners.at(4)?.href"
-        target="_blank"
-      >
-        <NuxtImg class="w-full" :src="partners.at(4)?.logo" loading="lazy" />
-      </a>
-      <a
-        class="flex h-24 w-72 justify-center rounded-sm bg-white p-5"
-        :href="partners.at(5)?.href"
-        target="_blank"
-      >
-        <NuxtImg :src="partners.at(5)?.logo" loading="lazy" />
-      </a>
-      <a
-        class="flex h-24 w-72 justify-center rounded-sm bg-white p-5"
-        :href="partners.at(6)?.href"
-        target="_blank"
-      >
-        <NuxtImg :src="partners.at(6)?.logo" loading="lazy" />
-      </a>
-      <a
-        class="flex h-40 justify-center rounded-sm bg-white p-2"
-        :href="partners.at(7)?.href"
-        target="_blank"
-      >
-        <NuxtImg :src="partners.at(7)?.logo" loading="lazy" />
-      </a>
-      <a
-        class="flex h-24 justify-center rounded-sm bg-blue-950 p-5"
-        :href="partners.at(8)?.href"
-        target="_blank"
-      >
-        <NuxtImg :src="partners.at(8)?.logo" loading="lazy" />
-      </a>
+    <div class="swiper h-64 w-full !px-10">
+      <div class="swiper-wrapper">
+        <div
+          v-for="partner of partners"
+          :key="partner.href"
+          class="swiper-slide !flex items-center justify-center"
+        >
+          <a
+            class="rounded-sm p-5"
+            :href="partner.href"
+            target="_blank"
+            :style="{ backgroundColor: partner.background }"
+          >
+            <NuxtImg
+              :src="partner.logo"
+              :width="partner.width"
+              :height="partner.height"
+              loading="lazy"
+              placeholder
+            />
+          </a>
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+      </div>
+    </div>
+    <div v-show="isInited" class="flex items-center">
+      <Button v-show="isLargeScreen" text rounded @click="swiper.slidePrev()">
+        <Icon name="prime:angle-left" size="50" />
+      </Button>
+      <div class="swiper-pagination-custom flex justify-center"></div>
+      <Button v-show="isLargeScreen" text rounded @click="swiper.slideNext()">
+        <Icon name="prime:angle-right" size="50" />
+      </Button>
     </div>
     <div
       class="mt-10 flex w-full flex-col items-center bg-stone-100 p-7 text-center text-2xl dark:bg-gray-800"

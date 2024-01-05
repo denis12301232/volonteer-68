@@ -1,8 +1,8 @@
 import type { LiqPay } from './liqpay';
 export * from './liqpay';
 export * from './paypal';
+export * from './entities'
 
-export type ITheme = 'dark' | 'light';
 
 export namespace Query {
   export namespace Liqpay {

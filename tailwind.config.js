@@ -26,5 +26,7 @@ export default {
     'text-xl',
     'hover:bg-red-300',
     'bg-red-300',
+    'bg-blue-700',
+    'dark:bg-blue-700',
   ],
 };

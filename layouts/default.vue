@@ -97,6 +97,7 @@ const items = computed(() => [
   },
 ]);
 
+provide('isLargeScreen', isLargeScreen);
 watch(isNeedClose, () => isNeedClose.value && openMenu('right'));
 
 function openMenu(type: 'left' | 'right') {
