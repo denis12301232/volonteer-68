@@ -7,14 +7,12 @@ const query = reactive({
   description: '',
   locale: computed(() => locale.value),
 });
-const { data, status, execute } = useAsyncData(
-  'donate-paypal',
-  () => $fetch('/api/paypal/donate', { query }),
-  {
-    immediate: false,
-    server: false,
-  }
-);
+const { data, status, execute } = await useFetch('/api/paypal/donate', {
+  query,
+  immediate: false,
+  server: false,
+  watch: false,
+});
 const disabled = computed(() => status.value === 'pending' || !query.amount || !query.description);
 const src = computed(() => data.value?.links.filter((link) => link.rel === 'approve').at(0)?.href);
 
@@ -30,7 +28,7 @@ function onSrc(n?: string) {
   <Card>
     <template #header>
       <Button
-        class="!absolute right-1 top-1 z-50"
+        class="!absolute right-1 top-1 z-50 focus:ring-0"
         icon="pi pi-times"
         rounded
         text
@@ -60,12 +58,12 @@ function onSrc(n?: string) {
         />
         <div class="mt-7 flex justify-center">
           <Button
-            class="pointer-events-auto disabled:cursor-not-allowed dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+            class="pointer-events-auto w-fit p-2 disabled:cursor-not-allowed"
             type="submit"
             :disabled="disabled"
             :loading="status === 'pending'"
           >
-            <ProgressSpinner v-if="status === 'pending'" class="h-5 w-5" strokeWidth="8" />
+            <Wheel v-if="status === 'pending'" />
             <Icon v-else name="prime:paypal" />
             <span class="ml-2 font-bold">{{ t('index.donate.money.messages.donate') }}</span>
           </Button>

@@ -135,16 +135,16 @@ onMounted(() => {
         <NuxtImg width="96" :src="kh.logo" loading="lazy" />
       </div>
       <div class="mt-5 flex flex-col px-5 sm:mt-0">
-        <UiLink class="text-center text-lg italic sm:text-xl md:text-left" :href="kh.hrefs.at(0)">
+        <UiLink class="text-center text-lg italic md:text-left" :href="kh.hrefs.at(0)">
           Департамент соціального захисту Харківської ОВА
         </UiLink>
-        <UiLink class="text-center text-lg italic sm:text-xl md:text-left" :href="kh.hrefs.at(1)">
+        <UiLink class="text-center text-lg italic md:text-left" :href="kh.hrefs.at(1)">
           Департамент цивільного захисту Харківської ОВА
         </UiLink>
-        <UiLink class="text-center text-lg italic sm:text-xl md:text-left" :href="kh.hrefs.at(2)">
+        <UiLink class="text-center text-lg italic md:text-left" :href="kh.hrefs.at(2)">
           Адміністрація Слобідського району Харківської міської ради
         </UiLink>
-        <UiLink class="text-center text-lg italic sm:text-xl md:text-left" :href="kh.hrefs.at(3)">
+        <UiLink class="text-center text-lg italic md:text-left" :href="kh.hrefs.at(3)">
           Адміністрація Харківського вокзалу Південної залізниці
         </UiLink>
       </div>
@@ -175,11 +175,11 @@ onMounted(() => {
       </div>
     </div>
     <div v-show="isInited" class="flex items-center">
-      <Button v-show="isLargeScreen" text rounded @click="swiper.slidePrev()">
+      <Button v-show="isLargeScreen" class="focus:ring-0" text rounded @click="swiper.slidePrev()">
         <Icon name="prime:angle-left" size="50" />
       </Button>
-      <div class="swiper-pagination-custom flex justify-center"></div>
-      <Button v-show="isLargeScreen" text rounded @click="swiper.slideNext()">
+      <div class="swiper-pagination-custom flex justify-center px-2"></div>
+      <Button v-show="isLargeScreen" class="focus:ring-0" text rounded @click="swiper.slideNext()">
         <Icon name="prime:angle-right" size="50" />
       </Button>
     </div>

@@ -7,7 +7,7 @@ function onChange() {
 </script>
 
 <template>
-  <Button class="!border-none !text-yellow-500" aria-label="theme" outlined text rounded @click="onChange">
-    <Icon :name="theme === 'dark' ? 'prime:moon' : 'prime:sun'" />
+  <Button class="focus:ring-0" aria-label="theme" outlined text rounded @click="onChange">
+    <Icon class="text-yellow-500" :name="theme === 'dark' ? 'prime:moon' : 'prime:sun'" />
   </Button>
 </template>

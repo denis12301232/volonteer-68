@@ -111,6 +111,12 @@ function openMenu(type: 'left' | 'right') {
       :model="items"
       :pt-options="{ mergeProps: true, mergeSections: true }"
       :pt="{
+        root: {
+          class: ['dark:!border-blue-900/40', 'dark:!bg-gray-900'],
+        },
+        menu: {
+          class: ['dark:!border-blue-900/40', 'dark:!bg-gray-900'],
+        },
         end: {
           class: ['ml-auto'],
         },
@@ -143,7 +149,7 @@ function openMenu(type: 'left' | 'right') {
           </div>
           <div class="ml-2 flex flex-col items-center justify-center">
             <span class="text-center">{{ item.label }}</span>
-            <span v-if="item.phone" class="text-sm italic">{{ item.phone }}</span>
+            <span v-if="item.phone" class="mt-1 text-sm italic">{{ item.phone }}</span>
           </div>
           <div>
             <Icon v-if="hasSubmenu" name="prime:angle-down" />
@@ -154,27 +160,27 @@ function openMenu(type: 'left' | 'right') {
         <div class="flex flex-col items-end">
           <div class="flex items-center">
             <Button
-              class="hidden dark:border-blue-600 dark:bg-blue-600 dark:text-white sm:inline-block md:hidden"
+              class="hidden w-fit p-2 text-lg sm:inline-block md:hidden"
               @click="router.push(localeRoute({ name: 'index', hash: '#contacts' })!)"
             >
               {{ t('layout.default.nav.help') }}
             </Button>
             <Button
-              class="ml-2 hidden dark:border-blue-600 dark:bg-blue-600 dark:text-white sm:inline-block"
+              class="ml-2 hidden w-fit p-2 sm:inline-block"
               @click="router.push(localeRoute({ name: 'index', hash: '#donate' })!)"
             >
               {{ t('layout.default.nav.donateTop') }}
             </Button>
-            <LangSwitcher class="ml-2 hidden !w-24 text-sm lg:flex" />
+            <LangSwitcher class="ml-2 hidden !w-fit text-sm lg:flex" />
             <ThemeToggler class="ml-2 hidden lg:inline-flex" />
             <Button
-              class="ml-2 inline-block !p-2 lg:hidden"
+              class="ml-2 inline-block focus:ring-0 lg:hidden"
               text
-              severity="secondary"
+              rounded
               aria-label="menu"
               @click="openMenu('right')"
             >
-              <Icon name="prime:bars" size="40" />
+              <Icon class="text-black dark:text-white" name="prime:bars" size="40" />
             </Button>
           </div>
           <div class="mr-4 mt-5 hidden items-center justify-center py-4 lg:flex">
@@ -271,7 +277,7 @@ function openMenu(type: 'left' | 'right') {
           </h1>
           <Button
             v-if="!isLargeScreen"
-            class="!absolute right-1 top-1"
+            class="!absolute right-1 top-1 focus:ring-0"
             text
             rounded
             @click="closeCallback"
@@ -284,7 +290,7 @@ function openMenu(type: 'left' | 'right') {
           class="gutter-both flex flex-col items-center overflow-auto"
           style="height: calc(100% - 100px)"
         >
-          <LangSwitcher class="!w-24" />
+          <LangSwitcher class="!w-fit" />
           <UiLink class="mt-4" :to="localeRoute({ name: 'index' })" @click="openMenu('right')">
             {{ t('layout.default.nav.index') }}
           </UiLink>

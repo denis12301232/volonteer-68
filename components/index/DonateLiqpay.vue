@@ -3,14 +3,12 @@ const emit = defineEmits<{ close: [] }>();
 const { locale, t } = useI18n();
 const button = ref<HTMLButtonElement | null>(null);
 const query = reactive({ amount: 0, currency: 'USD', description: '', language: locale.value });
-const { data, status, execute } = useAsyncData(
-  'donate-liqpay',
-  () => $fetch('/api/liqpay/donate', { query }),
-  {
-    immediate: false,
-    server: false,
-  }
-);
+const { data, status, execute } = await useFetch('/api/liqpay/donate', {
+  query,
+  immediate: false,
+  server: false,
+  watch: false,
+});
 const disabled = computed(() => status.value === 'pending' || !query.amount || !query.description);
 const API = 'https://www.liqpay.ua/api/3/checkout';
 
@@ -24,7 +22,7 @@ function donate() {
 <template>
   <Card>
     <template #header>
-      <Button class="!absolute right-1 top-1 z-50" rounded text @click="emit('close')">
+      <Button class="!absolute right-1 top-1 z-50 focus:ring-0" rounded text @click="emit('close')">
         <Icon name="prime:times" />
       </Button>
     </template>
@@ -49,12 +47,12 @@ function donate() {
         />
         <div class="mt-7 flex justify-center">
           <Button
-            class="pointer-events-auto disabled:cursor-not-allowed dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+            class="pointer-events-auto w-fit p-2 disabled:cursor-not-allowed"
             :loading="status === 'pending'"
             :disabled="disabled"
             type="submit"
           >
-            <ProgressSpinner v-if="status === 'pending'" class="h-5 w-5" strokeWidth="8" />
+            <Wheel v-if="status === 'pending'" />
             <Svg v-else class="h-4 w-4" name="liqpay"></Svg>
             <span class="ml-2 font-bold">{{ t('index.donate.money.messages.donate') }}</span>
           </Button>

@@ -1,4 +1,5 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve } from 'node:path';
+
 export default defineNuxtConfig({
   appConfig: {
     nuxtIcon: {
@@ -12,12 +13,7 @@ export default defineNuxtConfig({
     port: 3000,
   },
   devtools: { enabled: true },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
+
   runtimeConfig: {
     public: {
       DOMAIN_URL: process.env.DOMAIN_URL,
@@ -68,7 +64,6 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: 'i18n/locales',
     defaultLocale: 'uk',
-    strategy: 'prefix',
     detectBrowserLanguage: false,
     compilation: {
       strictMessage: false,
@@ -77,9 +72,8 @@ export default defineNuxtConfig({
   primevue: {
     options: {
       unstyled: true,
-      ripple: true,
     },
-    importPT: { as: 'Tailwind', from: 'primevue/passthrough/tailwind' },
+    importPT: { from: resolve(__dirname, './assets/presets/lara/'), as: 'Lara' },
     components: {
       include: [
         'Button',
@@ -90,7 +84,6 @@ export default defineNuxtConfig({
         'InputNumber',
         'InputText',
         'Menubar',
-        'ProgressSpinner',
         'Sidebar',
       ],
     },

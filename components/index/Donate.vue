@@ -40,7 +40,7 @@ function openModal(n: keyof typeof is) {
           <template #content>
             <div class="mt-4 flex justify-center px-5">
               <Button
-                class="dark:border-blue-600 dark:text-blue-600"
+                class="w-fit p-2"
                 outlined
                 @click="openModal('liqpay')"
               >
@@ -48,7 +48,7 @@ function openModal(n: keyof typeof is) {
                 <span class="ml-2 font-bold">LiqPay</span>
               </Button>
               <Button
-                class="ml-2 dark:border-blue-600 dark:text-blue-600"
+                class="ml-2 w-fit p-2"
                 outlined
                 @click="openModal('paypal')"
               >

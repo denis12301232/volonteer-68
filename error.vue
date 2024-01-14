@@ -31,7 +31,7 @@ function handleError() {
         <Divider layout="vertical" />
         <div class="text-lg">{{ error.statusMessage }}</div>
       </div>
-      <Button class="mt-4 flex items-center" outlined @click="handleError">
+      <Button class="mt-4 flex items-center w-fit p-2" outlined @click="handleError">
         <Icon name="prime:home" size="35" />
         <span class="ml-2 text-lg font-bold">Home</span>
       </Button>

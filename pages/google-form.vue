@@ -1,10 +1,14 @@
 <script setup lang="ts">
-const src = 'https://docs.google.com/forms/d/e/1FAIpQLScXVrOShlFBkR6i8OFxPDQiOU3SUmBxjKxGV2l1WqQfrffTwQ/viewform';
+const src =
+  'https://docs.google.com/forms/d/e/1FAIpQLScXVrOShlFBkR6i8OFxPDQiOU3SUmBxjKxGV2l1WqQfrffTwQ/viewform';
 const loading = ref(true);
 const { t } = useI18n();
 
 definePageMeta({ layout: 'simple' });
-useSeoMeta({ title: `${t('googleForm.pageTitle')} | Волонтер 68, Харків`, description: t('googleForm.pageTitle') });
+useSeoMeta({
+  title: `${t('googleForm.pageTitle')} | Волонтер 68, Харків`,
+  description: t('googleForm.pageTitle'),
+});
 
 function onLoad() {
   loading.value = false;
@@ -17,7 +21,7 @@ function onError(e: Event) {
 
 <template>
   <div v-show="loading" class="flex h-screen w-screen items-center justify-center">
-    <ProgressSpinner />
+    <Wheel class="text-primary-700" size="50" />
   </div>
   <iframe
     v-show="!loading"

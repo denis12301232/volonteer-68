@@ -14,14 +14,14 @@ const localeRoute = useLocaleRoute();
   >
     <div class="hidden w-full justify-around py-5 md:flex">
       <Button
-        class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+        class="w-fit p-4 text-lg"
         color="sky"
         @click="router.push(localeRoute({ name: 'index', hash: '#donate' })!)"
       >
         {{ t('index.button.donate') }}
       </Button>
       <Button
-        class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+        class="w-fit p-4 text-lg"
         color="sky"
         @click="router.push(localeRoute({ name: 'index', hash: '#contacts' })!)"
       >
@@ -57,14 +57,14 @@ const localeRoute = useLocaleRoute();
     </div>
     <div class="hidden w-full justify-around py-5 md:flex">
       <Button
-        class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+        class="w-fit p-4 text-lg"
         color="sky"
         @click="router.push(localeRoute({ name: 'index', hash: '#donate' })!)"
       >
         {{ t('index.button.donate') }}
       </Button>
       <Button
-        class="text-lg dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+        class="w-fit p-4 text-lg"
         color="sky"
         @click="router.push(localeRoute({ name: 'index', hash: '#contacts' })!)"
       >

@@ -3,14 +3,17 @@ const { t, d } = useI18n();
 const localeRoute = useLocaleRoute();
 const { data, pending } = useFetch(`/api/report`, { query: { limit: 10, skip: 0 } });
 definePageMeta({ layout: 'default' });
-useSeoMeta({ title: `${t('news.pageTitle')} | Волонтер 68, Харків`, description: t('news.pageTitle') });
+useSeoMeta({
+  title: `${t('news.pageTitle')} | Волонтер 68, Харків`,
+  description: t('news.pageTitle'),
+});
 </script>
 
 <template>
   <div class="m-auto w-full sm:w-2/3">
     <Divider />
     <div v-if="pending" class="flex justify-center">
-      <ProgressSpinner aria-label="Loading" />
+      <Wheel class="text-primary-800" size="50" aria-label="Loading" />
     </div>
     <NuxtLink
       v-for="report of data?.reports"

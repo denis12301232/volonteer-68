@@ -11,13 +11,13 @@ onMounted(() => route.hash && setTimeout(() => scrollIntoView(route.hash, { beha
 <template>
   <div class="mt-2 flex flex-col items-center sm:hidden">
     <Button
-      class="dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+      class="w-fit p-2"
       @click="router.push(localeRoute({ name: 'index', hash: '#contacts' })!)"
     >
       {{ t('index.button.help') }}
     </Button>
     <Button
-      class="mt-2 dark:border-blue-600 dark:bg-blue-600 dark:text-white"
+      class="mt-2 w-fit p-2"
       @click="router.push(localeRoute({ name: 'index', hash: '#donate' })!)"
     >
       {{ t('index.button.donate') }}
