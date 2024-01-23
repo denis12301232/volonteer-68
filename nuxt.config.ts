@@ -16,6 +16,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
+      API_URL: process.env.API_URL,
       DOMAIN_URL: process.env.DOMAIN_URL,
       TELEGRAM: process.env.TELEGRAM,
       INSTAGRAM: process.env.INSTAGRAM,
@@ -84,6 +85,7 @@ export default defineNuxtConfig({
         'InputNumber',
         'InputText',
         'Menubar',
+        'Paginator',
         'Sidebar',
       ],
     },

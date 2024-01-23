@@ -1,11 +1,11 @@
-import type { Query, PayPal } from '~/types';
+import type { PayPal } from '~/types';
 import { ValidationError } from 'yup';
-import { Schema } from '~/validation';
+import { PaypalSchema } from '~/common/schemas/paypal.schema';
 
 export default defineEventHandler(async (event) => {
   try {
-    const query = getQuery<Query.Paypal.Donate>(event);
-    await Schema.PayPal.Donate.validate(query);
+    const query = getQuery<PayPal.Donate>(event);
+    await PaypalSchema.donate.validate(query);
     const config = useRuntimeConfig();
     const auth = `${config.public.PAYPAL_CLIENT_ID}:${config.private.PAYPAL_CLIENT_SECRET}`;
     const response = await $fetch<PayPal.CreateOrderResponse>(

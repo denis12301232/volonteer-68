@@ -1,4 +1,11 @@
 export namespace PayPal {
+  export type Donate = {
+    amount: string;
+    currency: 'USD';
+    description: string;
+    locale: string;
+  };
+
   export type CreateOrderRequestBody = {
     intent?: PayPalBase.INTENT;
     purchase_units: PayPalBase.PurchaseUnit[];

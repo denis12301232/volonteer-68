@@ -1,4 +1,24 @@
+import type { IReport } from '@/types';
+
+export namespace Report {
+  export interface IndexResponse {
+    total: number;
+    reports: IReport[];
+  }
+
+  export interface IndexQuery {
+    limit: number;
+    skip: number;
+  }
+
+  export interface ShowQuery {
+    id: string;
+  }
+}
+
 export namespace LiqPay {
+  export type DonateQuery = Pick<LiqPay.Json, 'amount' | 'currency' | 'description' | 'language'>;
+
   export interface Json {
     version: number;
     public_key: string;

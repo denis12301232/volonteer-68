@@ -1,7 +1,8 @@
+import type { LiqPay } from '~/types';
 import { object, string, number } from 'yup';
 
-export class LiqPay {
-  static Donate = object({
+export namespace LiqpaySchema {
+  export const donate = object<LiqPay.DonateQuery>({
     amount: number().required().positive(),
     currency: string().required().oneOf(['USD', 'EUR', 'UAH', 'BYN', 'KZT']),
     description: string().required(),

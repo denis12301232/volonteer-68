@@ -1,11 +1,11 @@
 import type { PayPal } from '~/types';
 import { ValidationError } from 'yup';
-import { Schema } from '~/validation';
+import { PaypalSchema } from '~/common/schemas/paypal.schema';
 
 export default defineEventHandler(async (event) => {
   try {
     const query = getQuery(event);
-    await Schema.PayPal.Capture.validate(query);
+    await PaypalSchema.capture.validate(query);
     const config = useRuntimeConfig();
     const auth = `${config.public.PAYPAL_CLIENT_ID}:${config.private.PAYPAL_CLIENT_SECRET}`;
     const url = `${config.private.PAYPAL_CREATE_ORDER_URL}/${query.token}/capture`;
